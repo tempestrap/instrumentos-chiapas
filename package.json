@@ -1,0 +1,23 @@
+{
+  "name": "instrumentos-chiapas",
+  "version": "1.0.0",
+  "description": "Pagina para vender instrumentos de chiapas a todo el mundo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tempestrap/instrumentos-chiapas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tempestrap/instrumentos-chiapas/issues"
+  },
+  "homepage": "https://github.com/tempestrap/instrumentos-chiapas#readme",
+  "dependencies": {
+    "sequelize": "^6.37.7"
+  }
+}
