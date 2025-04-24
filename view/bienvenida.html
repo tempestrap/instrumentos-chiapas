@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tunkul Maya - Instrumentos Chapanecos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Encabezado con navegación */
+    header {
+      background-color: #4B2E2E; /* Color oscuro para contrastar */
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contenido principal */
+    .contenedor {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .imagen {
+      flex: 1 1 45%;
+    }
+
+    .imagen img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    .detalles {
+      flex: 1 1 45%;
+    }
+
+    .detalles h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .descripcion, .caracteristicas, .marca, .precio {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .comprar-btn {
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .comprar-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tunkul Maya</h1>
+    <nav>
+      <a href="#">Guitarras</a>
+      <a href="#">Violín</a>
+      <a href="#">Marimba</a>
+      <a href="#">Tambor</a>
+      <a href="#">Flauta</a>
+      <a href="#">Arpa</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/tunkul.jpg" alt="Tunkul Maya">
+    </div>
+    <div class="detalles">
+      <h2>Tunkul Maya</h2>
+      <div class="descripcion">
+        Instrumento ceremonial de percusión de origen prehispánico. El sonido grave y profundo del tunkul se produce golpeando su superficie con mazos de madera.
+      </div>
+      <div class="caracteristicas">
+        - Hecho con tronco de ceiba<br>
+        - Tallado a mano<br>
+        - Sonido profundo y ceremonial
+      </div>
+      <div class="marca">Marca: Raíz Sonora</div>
+      <div class="precio">Precio: $380.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/guitarra.jpg" alt="Guitarra tradicional">
+    </div>
+    <div class="detalles">
+      <h2>Guitarra Tradicional</h2>
+      <div class="descripcion">
+        Emblemático instrumento de cuerdas usado para acompañar sones y marimbas. Elaborado artesanalmente con maderas de la región.
+      </div>
+      <div class="caracteristicas">
+        - Madera de cedro y pino<br>
+        - Cuerdas de nylon<br>
+        - Afinación precisa
+      </div>
+      <div class="marca">Marca: Son de Chiapas</div>
+      <div class="precio">Precio: $850.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/marimba.jpg" alt="Marimba chiapaneca">
+    </div>
+    <div class="detalles">
+      <h2>Marimba Chiapaneca</h2>
+      <div class="descripcion">
+        Instrumento icónico de Chiapas, hecho con madera de hormiguillo y calabazas resonantes. Su sonido dulce es símbolo de identidad regional.
+      </div>
+      <div class="caracteristicas">
+        - Teclas de hormiguillo<br>
+        - Resonadores naturales<br>
+        - Hecho a mano
+      </div>
+      <div class="marca">Marca: Marimbas del Sur</div>
+      <div class="precio">Precio: $5,200.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+  
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/tambor.jpg" alt="Tambor ceremonial">
+    </div>
+    <div class="detalles">
+      <h2>Tambor Ceremonial</h2>
+      <div class="descripcion">
+        Utilizado en rituales y danzas tradicionales. Hecho con piel de venado y tronco ahuecado por artesanos tzotziles.
+      </div>
+      <div class="caracteristicas">
+        - Piel natural<br>
+        - Sonido grave<br>
+        - Decoración tribal
+      </div>
+      <div class="marca">Marca: Eco Tzotzil</div>
+      <div class="precio">Precio: $1,100.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/flauta.jpg" alt="Flauta de carrizo">
+    </div>
+    <div class="detalles">
+      <h2>Flauta de Carrizo</h2>
+      <div class="descripcion">
+        Flauta tradicional utilizada en fiestas religiosas. Hecha con caña de carrizo seleccionada y afinada manualmente.
+      </div>
+      <div class="caracteristicas">
+        - Caña de carrizo<br>
+        - Tallado a mano<br>
+        - Sonido agudo y brillante
+      </div>
+      <div class="marca">Marca: Aliento Maya</div>
+      <div class="precio">Precio: $300.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="imagen">
+      <img src="img/arpa.jpg" alt="Arpa tradicional chiapaneca">
+    </div>
+    <div class="detalles">
+      <h2>Arpa Tradicional</h2>
+      <div class="descripcion">
+        Instrumento elegante usado en música regional. Elaborada con maderas finas y cuerdas tensadas a mano.
+      </div>
+      <div class="caracteristicas">
+        - 32 cuerdas<br>
+        - Madera de caoba<br>
+        - Acabado brillante
+      </div>
+      <div class="marca">Marca: Cuerdas de Chiapas</div>
+      <div class="precio">Precio: $4,500.00 MXN</div>
+      <button class="comprar-btn">Comprar</button>
+    </div>
+  </div>
+  
+
+</body>
+</html>

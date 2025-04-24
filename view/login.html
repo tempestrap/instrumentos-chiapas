@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Login</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #015551;
+    }
+    .login-container {
+      background: rgb(254, 79, 45);
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 350px;
+      width: 100%;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+    }
+    button {
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #0592f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://th.bing.com/th/id/OIP.mUnmCEjq6Zd-YJ0E3vGzrwHaEK?rs=1&pid=ImgDetMain" alt="Logo" width="350">
+    <h2>Iniciar Sesión</h2>
+    <form action="#">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="login()">Ingresar</button>
+    </form>
+    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+  </div>
+
+  <script>
+    async function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      const response = await fetch('/apl/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        window.location.href = "bienvenida.html"; // Redirige si el login es exitoso
+      } else {
+        alert("Credenciales incorrectas"); // Muestra un mensaje si falla
+      }
+    }
+  </script>  
+</body>
+</html>
