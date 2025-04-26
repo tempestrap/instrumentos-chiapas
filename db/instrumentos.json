@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "nombre": "Tunkul Maya",
+      "descripcion": "Instrumento ceremonial...",
+      "caracteristicas": ["Hecho con tronco de ceiba", "Tallado a mano", "Sonido profundo"],
+      "marca": "Raíz Sonora",
+      "precio": 380,
+      "imagen": "img/tunkul.jpg",
+      "categoria": "tunkul"
+    },
+    {
+      "id": 2,
+      "nombre": "Guitarra Tradicional",
+      "descripcion": "Emblemático instrumento...",
+      "caracteristicas": ["Madera de cedro", "Cuerdas de nylon", "Afinación precisa"],
+      "marca": "Son de Chiapas",
+      "precio": 850,
+      "imagen": "img/guitarra.jpg",
+      "categoria": "guitarra"
+    },
+    {
+      "id": 3,
+      "nombre": "Marimba Chiapaneca",
+      "descripcion": "Instrumento icónico de Chiapas...",
+      "caracteristicas": ["Teclas de hormiguillo", "Resonadores naturales", "Hecho a mano"],
+      "marca": "Marimbas del Sur",
+      "precio": 5200,
+      "imagen": "img/marimba.jpg",
+      "categoria": "marimba"
+    },
+    {
+      "id": 4,
+      "nombre": "Tambor Ceremonial",
+      "descripcion": "Utilizado en rituales...",
+      "caracteristicas": ["Piel natural", "Sonido grave", "Decoración tribal"],
+      "marca": "Eco Tzotzil",
+      "precio": 1100,
+      "imagen": "img/tambor.jpg",
+      "categoria": "tambor"
+    },
+    {
+      "id": 5,
+      "nombre": "Flauta de Carrizo",
+      "descripcion": "Flauta tradicional...",
+      "caracteristicas": ["Caña de carrizo", "Tallado a mano", "Sonido agudo"],
+      "marca": "Aliento Maya",
+      "precio": 300,
+      "imagen": "img/flauta.jpg",
+      "categoria": "flauta"
+    },
+    {
+      "id": 6,
+      "nombre": "Arpa Tradicional",
+      "descripcion": "Instrumento elegante...",
+      "caracteristicas": ["32 cuerdas", "Madera de caoba", "Acabado brillante"],
+      "marca": "Cuerdas de Chiapas",
+      "precio": 4500,
+      "imagen": "img/arpa.jpg",
+      "categoria": "arpa"
+    }
+  ]
+  
