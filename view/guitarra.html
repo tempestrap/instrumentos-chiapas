@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Tienda de Guitarras</title>
-    <link rel="stylesheet" href="../css/guitarra.css">
+    <link rel="stylesheet" href="../styles/guitarra.css">
 </head>
 <body>
     <header class="hero-header">
@@ -25,64 +24,11 @@
             <button class="cta-button">Explorar colección</button>
         </div>
     </header>
-=======
-  <meta charset="UTF-8">
-  <title>Marimba de Concierto - Instrumentos Chatanecos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    }
 
-    .instrumento {
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+    <div id="contenedor-instrumentos" class="instrumentos-container">
+        <!-- Los instrumentos se cargarán aquí dinámicamente -->
+    </div>
 
-    .instrumento img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-    }
-
-    .descripcion, .marca, .precio, .caracteristicas {
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-
-    .comprar-btn {
-      padding: 12px 20px;
-      background-color: #007BFF;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .comprar-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-
-  <div id="contenedor-instrumentos">
-    <!-- Aquí el JavaScript va a inyectar los instrumentos automáticamente -->
-  </div>
-
-  <script src="../routes/guitarra.js"></script>
+    <script src="../routes/guitarra.js"></script>
 </body>
 </html>

@@ -1,196 +1,196 @@
 {
-  "instrumentos": [
-    {
-      "id": 1,
-      "nombre": "Marimba de Concierto",
-      "categoria": "marimba",
-      "descripcion": "Instrumento tradicional de percusión utilizado ampliamente en la música regional chiapaneca. Fabricada con maderas locales que brindan un tono cálido y resonante.",
-      "caracteristicas": [
-        "4 octavas completas",
-        "Afinación profesional",
-        "Hecha a mano con maderas de hormiguillo y cedro",
-        "Teclado curvado para un sonido más resonante",
-        "Incluye baquetas personalizadas"
-      ],
-      "marca": "Chataneco Instruments",
-      "precio": "$45,000.00 MXN",
-      "imagen": "marimba.jpg"
-    },
-    {
-      "id": 2,
-      "nombre": "Túnkul Profesional",
-      "categoria": "tunkul",
-      "descripcion": "Túncul tallado a mano, utilizado en celebraciones tradicionales chiapanecas. Produce un sonido grave y profundo, ideal para rituales y festividades.",
-      "caracteristicas": [
-        "Madera maciza",
-        "Decoraciones artesanales",
-        "Sonido grave profundo",
-        "Tamaño adecuado para grupos grandes",
-        "Hecho a mano por artesanos locales"
-      ],
-      "marca": "TunculArt",
-      "precio": "$7,500.00 MXN",
-      "imagen": "tuncul.jpg"
-    },
-    {
-      "id": 3,
-      "nombre": "Guitarra Acústica Chiapaneca",
-      "categoria": "guitarra",
-      "descripcion": "Guitarra acústica de alta calidad, ideal para músicos que buscan un sonido claro y cálido. Fabricada con maderas seleccionadas de la región.",
-      "caracteristicas": [
-        "Cuerpo de caoba",
-        "Tapa de abeto",
-        "Mástil ergonómico",
-        "Cuerdas de nylon para mayor comodidad",
-        "Sonido nítido y resonante"
-      ],
-      "marca": "Chataneco Instruments",
-      "precio": "$4,000.00 MXN",
-      "imagen": "Guitarra2.png"
-    },
-    {
-      "id": 4,
-      "nombre": "Marimba de Madera de Cedro",
-      "categoria": "marimba",
-      "descripcion": "Marimba artesanal de madera de cedro, utilizada en conciertos y festivales de música tradicional. Su sonido es suave y melodioso, ideal para composiciones lentas.",
-      "caracteristicas": [
-        "5 octavas completas",
-        "Teclado de madera de cedro",
-        "Sonido dulce y melódico",
-        "Baquetas incluidas",
-        "Ideal para grupos folclóricos"
-      ],
-      "marca": "Sonido Chiapaneco",
-      "precio": "$55,000.00 MXN",
-      "imagen": "marimba_cedro.jpg"
-    },
-    {
-      "id": 5,
-      "nombre": "Túnkul Ceremonial",
-      "categoria": "tunkul",
-      "descripcion": "Túnkul tradicional, utilizado en ceremonias religiosas y festivales. Su resonancia profunda marca la importancia de las tradiciones chiapanecas.",
-      "caracteristicas": [
-        "Hecho de madera de pino",
-        "Decoraciones talladas a mano",
-        "Sonido grave y ritualístico",
-        "Largo adecuado para eventos grandes",
-        "Producto artesanal"
-      ],
-      "marca": "TunculArt",
-      "precio": "$6,000.00 MXN",
-      "imagen": "tunkul_ceremonial.jpg"
-    },
-    {
-      "id": 6,
-      "nombre": "Guitarra Eléctrica Chiapaneca",
-      "categoria": "guitarra",
-      "descripcion": "Guitarra eléctrica con un diseño único inspirado en la cultura chiapaneca, ideal para músicos que buscan un sonido potente y brillante.",
-      "caracteristicas": [
-        "Cuerpo de aliso",
-        "Pastillas Humbucker",
-        "Mástil de arce",
-        "Sistema de trémolo",
-        "Perfecta para rock y blues"
-      ],
-      "marca": "Chataneco Instruments",
-      "precio": "$7,500.00 MXN",
-      "imagen": "Guitarra3.png"
-    },
-    {
-      "id": 7,
-      "nombre": "Marimba de Caña de Azúcar",
-      "categoria": "marimba",
-      "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
-      "caracteristicas": [
-        "4.5 octavas",
-        "Teclado hecho de caña de azúcar",
-        "Sonido brillante y penetrante",
-        "Baquetas de madera especial",
-        "Perfecta para músicos experimentales"
-      ],
-      "marca": "Sonido Chiapaneco",
-      "precio": "$48,000.00 MXN",
-      "imagen": "marimba_cana.jpg"
-    },
-    {
-      "id": 8,
-      "nombre": "Guitarra Clásica Chiapaneca",
-      "categoria": "guitarra",
-      "descripcion": "Guitarra clásica fabricada con maderas locales y cuerdas de nylon, perfecta para quienes buscan un sonido suave y resonante.",
-      "caracteristicas": [
-        "Cuerpo de ciprés",
-        "Cuerdas de nylon",
-        "Mástil de pino",
-        "Sonido cálido y armónico",
-        "Ideal para música clásica y folclore"
-      ],
-      "marca": "Chataneco Instruments",
-      "precio": "$3,500.00 MXN",
-      "imagen": "Guitarra4.png"
-    },
-    {
-      "id": 9,
-      "nombre": "Guitarra Bajo de 4 Cuerdas",
-      "categoria": "guitarra",
-      "descripcion": "Bajo eléctrico de 4 cuerdas, ideal para músicos de rock y música folclórica chiapaneca.",
-      "caracteristicas": [
-        "Cuerpo de fresno",
-        "Pastillas activas",
-        "Mástil de arce",
-        "Sonido potente y profundo",
-        "Perfecto para bandas de rock"
-      ],
-      "marca": "Chataneco Instruments",
-      "precio": "$5,500.00 MXN",
-      "imagen": "Guitarra_bajo.png"
-    },
-    {
-      "id": 10,
-      "nombre": "Arpa Tradicional Chiapaneca",
-      "categoria": "arpa",
-      "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
-      "caracteristicas": [
-        "Cuerdas de tripa",
-        "Cuerpo de madera de cedro",
-        "Sonido cálido y melodioso",
-        "Incluye un soporte para el arpa",
-        "Hecha a mano por artesanos locales"
-      ],
-      "marca": "Sonido Chiapaneco",
-      "precio": "$18,000.00 MXN",
-      "imagen": "arpa.jpg"
-    },
-    {
-      "id": 11,
-      "nombre": "Flauta de Carrizo",
-      "categoria": "flauta",
-      "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
-      "caracteristicas": [
-        "Fabricada con carrizo natural",
-        "Sonido suave y melódico",
-        "Ideal para música folclórica",
-        "Fácil de transportar y tocar",
-        "Hecha a mano por artesanos"
-      ],
-      "marca": "Sonido Chiapaneco",
-      "precio": "$1,200.00 MXN",
-      "imagen": "flauta_carrizo.jpg"
-    },
-    {
-      "id": 12,
-      "nombre": "Tambor Ceremonial",
-      "categoria": "tambor",
-      "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
-      "caracteristicas": [
-        "Hecho de madera maciza",
-        "Cubierto con piel de cabra",
-        "Sonido grave y resonante",
-        "Ideal para rituales y ceremonias",
-        "Decoraciones artesanales"
-      ],
-      "marca": "Sonido Chiapaneco",
-      "precio": "$8,000.00 MXN",
-      "imagen": "tambor_ceremonial.jpg"
-    }
-  ]
+  "instrumentos": {
+    "guitarra": [
+      {
+        "id": 3,
+        "nombre": "Guitarra Acústica Chiapaneca",
+        "descripcion": "Guitarra acústica de alta calidad, ideal para músicos que buscan un sonido claro y cálido. Fabricada con maderas seleccionadas de la región.",
+        "caracteristicas": [
+          "Cuerpo de caoba",
+          "Tapa de abeto",
+          "Mástil ergonómico",
+          "Cuerdas de nylon para mayor comodidad",
+          "Sonido nítido y resonante"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$4,000.00 MXN",
+        "imagen": "Guitarra2.png"
+      },
+      {
+        "id": 6,
+        "nombre": "Guitarra Eléctrica Chiapaneca",
+        "descripcion": "Guitarra eléctrica con un diseño único inspirado en la cultura chiapaneca, ideal para músicos que buscan un sonido potente y brillante.",
+        "caracteristicas": [
+          "Cuerpo de aliso",
+          "Pastillas Humbucker",
+          "Mástil de arce",
+          "Sistema de trémolo",
+          "Perfecta para rock y blues"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$7,500.00 MXN",
+        "imagen": "Guitarra3.png"
+      },
+      {
+        "id": 8,
+        "nombre": "Guitarra Clásica Chiapaneca",
+        "descripcion": "Guitarra clásica fabricada con maderas locales y cuerdas de nylon, perfecta para quienes buscan un sonido suave y resonante.",
+        "caracteristicas": [
+          "Cuerpo de ciprés",
+          "Cuerdas de nylon",
+          "Mástil de pino",
+          "Sonido cálido y armónico",
+          "Ideal para música clásica y folclore"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$3,500.00 MXN",
+        "imagen": "Guitarra4.png"
+      },
+      {
+        "id": 9,
+        "nombre": "Base para guitarra",
+        "descripcion": "Bajo eléctrico de 4 cuerdas, ideal para músicos de rock y música folclórica chiapaneca.",
+        "caracteristicas": [
+          "Cuerpo de fresno",
+          "Pastillas activas",
+          "Mástil de arce",
+          "Sonido potente y profundo",
+          "Perfecto para bandas de rock"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$5,500.00 MXN",
+        "imagen": "Guitarra5.png"
+      }
+    ],
+    "marimba": [
+      {
+        "id": 1,
+        "nombre": "Marimba de Concierto",
+        "descripcion": "Instrumento tradicional de percusión utilizado ampliamente en la música regional chiapaneca. Fabricada con maderas locales que brindan un tono cálido y resonante.",
+        "caracteristicas": [
+          "4 octavas completas",
+          "Afinación profesional",
+          "Hecha a mano con maderas de hormiguillo y cedro",
+          "Teclado curvado para un sonido más resonante",
+          "Incluye baquetas personalizadas"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$45,000.00 MXN",
+        "imagen": "marimba.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Marimba de Madera de Cedro",
+        "descripcion": "Marimba artesanal de madera de cedro, utilizada en conciertos y festivales de música tradicional. Su sonido es suave y melodioso, ideal para composiciones lentas.",
+        "caracteristicas": [
+          "5 octavas completas",
+          "Teclado de madera de cedro",
+          "Sonido dulce y melódico",
+          "Baquetas incluidas",
+          "Ideal para grupos folclóricos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$55,000.00 MXN",
+        "imagen": "marimba_cedro.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Marimba de Caña de Azúcar",
+        "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
+        "caracteristicas": [
+          "4.5 octavas",
+          "Teclado hecho de caña de azúcar",
+          "Sonido brillante y penetrante",
+          "Baquetas de madera especial",
+          "Perfecta para músicos experimentales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$48,000.00 MXN",
+        "imagen": "marimba_cana.jpg"
+      }
+    ],
+    "tunkul": [
+      {
+        "id": 2,
+        "nombre": "Túnkul Profesional",
+        "descripcion": "Túncul tallado a mano, utilizado en celebraciones tradicionales chiapanecas. Produce un sonido grave y profundo, ideal para rituales y festividades.",
+        "caracteristicas": [
+          "Madera maciza",
+          "Decoraciones artesanales",
+          "Sonido grave profundo",
+          "Tamaño adecuado para grupos grandes",
+          "Hecho a mano por artesanos locales"
+        ],
+        "marca": "TunculArt",
+        "precio": "$7,500.00 MXN",
+        "imagen": "tuncul.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Túnkul Ceremonial",
+        "descripcion": "Túnkul tradicional, utilizado en ceremonias religiosas y festivales. Su resonancia profunda marca la importancia de las tradiciones chiapanecas.",
+        "caracteristicas": [
+          "Hecho de madera de pino",
+          "Decoraciones talladas a mano",
+          "Sonido grave y ritualístico",
+          "Largo adecuado para eventos grandes",
+          "Producto artesanal"
+        ],
+        "marca": "TunculArt",
+        "precio": "$6,000.00 MXN",
+        "imagen": "tunkul_ceremonial.jpg"
+      }
+    ],
+    "arpa": [
+      {
+        "id": 10,
+        "nombre": "Arpa Tradicional Chiapaneca",
+        "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
+        "caracteristicas": [
+          "Cuerdas de tripa",
+          "Cuerpo de madera de cedro",
+          "Sonido cálido y melodioso",
+          "Incluye un soporte para el arpa",
+          "Hecha a mano por artesanos locales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$18,000.00 MXN",
+        "imagen": "arpa.jpg"
+      }
+    ],
+    "flauta": [
+      {
+        "id": 11,
+        "nombre": "Flauta de Carrizo",
+        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "caracteristicas": [
+          "Fabricada con carrizo natural",
+          "Sonido suave y melódico",
+          "Ideal para música folclórica",
+          "Fácil de transportar y tocar",
+          "Hecha a mano por artesanos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$1,200.00 MXN",
+        "imagen": "flauta_carrizo.jpg"
+      }
+    ],
+    "tambor": [
+      {
+        "id": 12,
+        "nombre": "Tambor Ceremonial",
+        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
+        "caracteristicas": [
+          "Hecho de madera maciza",
+          "Cubierto con piel de cabra",
+          "Sonido grave y resonante",
+          "Ideal para rituales y ceremonias",
+          "Decoraciones artesanales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$8,000.00 MXN",
+        "imagen": "tambor_ceremonial.jpg"
+      }
+    ]
+  }
 }

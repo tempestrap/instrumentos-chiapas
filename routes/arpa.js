@@ -1,37 +1,38 @@
-// marimba.js
-fetch('../db/instrumentos.json')
-  .then(response => response.json())
-  .then(data => {
-    const contenedor = document.getElementById('contenedor-instrumentos');
-    const marimbas = data.instrumentos.filter(instr => instr.categoria === 'arpa');
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('../db/instrumentos.json')
+      .then(response => response.json())
+      .then(data => {
+          const contenedor = document.getElementById('contenedor-instrumentos');
+          const instrumentos = data.instrumentos.arpa;
 
-    marimbas.forEach(instr => {
-      const html = `
-        <div class="instrumento">
-          <img src="../img/${instr.imagen}" alt="${instr.nombre}">
-          
-          <h1>${instr.nombre}</h1>
-
-          <div class="descripcion">
-            ${instr.descripcion}
-          </div>
-
-          <div class="caracteristicas">
-            ${instr.caracteristicas.map(caracteristica => `- ${caracteristica}<br>`).join('')}
-          </div>
-
-          <div class="marca">
-            Marca: ${instr.marca}
-          </div>
-
-          <div class="precio">
-            Precio: ${instr.precio}
-          </div>
-
-          <button class="comprar-btn">Comprar</button>
-        </div>
-      `;
-      contenedor.innerHTML += html;
-    });
-  })
-  .catch(error => console.error('Error cargando instrumentos:', error));
+          if (instrumentos && instrumentos.length > 0) {
+              instrumentos.forEach(instr => {
+                  const instrumentoDiv = document.createElement('div');
+                  instrumentoDiv.className = 'instrumento';
+                  
+                  instrumentoDiv.innerHTML = `
+                      <img src="../img/${instr.imagen}" alt="${instr.nombre}">
+                      <h3>${instr.nombre}</h3>
+                      <div class="descripcion">${instr.descripcion}</div>
+                      <div class="caracteristicas">
+                          ${instr.caracteristicas.map(caracteristica => 
+                              `<p>• ${caracteristica}</p>`
+                          ).join('')}
+                      </div>
+                      <div class="marca">Marca: ${instr.marca}</div>
+                      <div class="precio">${instr.precio}</div>
+                      <button class="comprar-btn">Comprar</button>
+                  `;
+                  
+                  contenedor.appendChild(instrumentoDiv);
+              });
+          } else {
+              contenedor.innerHTML = '<p>No se encontraron arpas disponibles.</p>';
+          }
+      })
+      .catch(error => {
+          console.error('Error cargando arpas:', error);
+          document.getElementById('contenedor-instrumentos').innerHTML = 
+              '<p>Error al cargar las arpas. Por favor intente más tarde.</p>';
+      });
+});

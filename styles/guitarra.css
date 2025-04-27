@@ -1,0 +1,268 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* Encabezado hero con imagen de fondo */
+.hero-header {
+    background-image: url('../img/Guitarra1.png');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    min-height: 400px;
+    max-height: 600px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Efecto overlay */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.5) 70%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 0;
+}
+
+/* Barra de navegación */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.site-name {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.nav-button {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Contenido principal */
+.hero-content {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 10%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.subheading {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #e04b00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los instrumentos */
+.instrumentos-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.instrumento {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.instrumento img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.instrumento h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.descripcion, .marca, .precio {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.caracteristicas {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.caracteristicas li {
+    margin-bottom: 8px;
+}
+
+.comprar-btn {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comprar-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos responsive */
+@media (max-width: 992px) {
+    .hero-header {
+        height: 60vh;
+        margin: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .subheading {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-header {
+        height: 50vh;
+        min-height: 350px;
+        margin: 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subheading {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header {
+        height: 45vh;
+        margin: 8px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subheading {
+        font-size: 0.9rem;
+    }
+    
+    .site-name {
+        font-size: 22px;
+    }
+    
+    .instrumento {
+        padding: 20px;
+    }
+}
