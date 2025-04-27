@@ -16,8 +16,8 @@
     },
     {
       "id": 2,
-      "nombre": "Túncul Profesional",
-      "categoria": "tuncul",
+      "nombre": "Túnkul Profesional",
+      "categoria": "tunkul",
       "descripcion": "Túncul tallado a mano, utilizado en celebraciones tradicionales chiapanecas.",
       "caracteristicas": [
         "Madera maciza",
@@ -27,6 +27,27 @@
       "marca": "TunculArt",
       "precio": "$7,500.00 MXN",
       "imagen": "tuncul.jpg"
+    },
+    {
+      "instrumentos": [
+        {
+          "nombre": "Guitarra Acústica",
+          "categoria": "guitarra",
+          "imagen": "Guitarra2.png",
+          "descripcion": "Instrumento de alta calidad para todos los niveles.",
+          "precio": "$4000",
+          "caracteristicas": ["Tapa de abeto", "Cuerdas de nylon"]
+        },
+        {
+          "nombre": "Guitarra Eléctrica",
+          "categoria": "guitarra",
+          "imagen": "Guitarra3.png",
+          "descripcion": "El asdf.",
+          "precio": "$399",
+          "caracteristicas": ["Pastillas humbucker", "Mástil cómodo"]
+        }
+      ]
     }
+    
   ]
 }
