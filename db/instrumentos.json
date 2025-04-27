@@ -13,8 +13,7 @@
           "Sonido nítido y resonante"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$4,000.00 MXN",
-        "imagen": "Guitarra2.png"
+        "precio": "$4,000.00 MXN"
       },
       {
         "id": 6,
@@ -28,8 +27,7 @@
           "Perfecta para rock y blues"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$7,500.00 MXN",
-        "imagen": "Guitarra3.png"
+        "precio": "$7,500.00 MXN"
       },
       {
         "id": 8,
@@ -43,8 +41,7 @@
           "Ideal para música clásica y folclore"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$3,500.00 MXN",
-        "imagen": "Guitarra4.png"
+        "precio": "$3,500.00 MXN"
       },
       {
         "id": 9,
@@ -58,8 +55,21 @@
           "Perfecto para bandas de rock"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$5,500.00 MXN",
-        "imagen": "Guitarra5.png"
+        "precio": "$5,500.00 MXN"
+      },
+      {
+        "id": 13,
+        "nombre": "Correa para guitarra",
+        "descripcion": "La ayuda perfecta para sostener la guitarra",
+        "caracteristicas": [
+          "Hecho de cuero",
+          "Pastillas activas",
+          "Mástil de arce",
+          "Sonido potente y profundo",
+          "Perfecto para bandas de rock"
+        ],
+        "marca": "Chataneco Instruments",
+        "precio": "$5,500.00 MXN"
       }
     ],
     "marimba": [
@@ -75,8 +85,7 @@
           "Incluye baquetas personalizadas"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$45,000.00 MXN",
-        "imagen": "marimba.jpg"
+        "precio": "$45,000.00 MXN"
       },
       {
         "id": 4,
@@ -90,8 +99,7 @@
           "Ideal para grupos folclóricos"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$55,000.00 MXN",
-        "imagen": "marimba_cedro.jpg"
+        "precio": "$55,000.00 MXN"
       },
       {
         "id": 7,
@@ -105,8 +113,7 @@
           "Perfecta para músicos experimentales"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$48,000.00 MXN",
-        "imagen": "marimba_cana.jpg"
+        "precio": "$48,000.00 MXN"
       }
     ],
     "tunkul": [
@@ -122,8 +129,7 @@
           "Hecho a mano por artesanos locales"
         ],
         "marca": "TunculArt",
-        "precio": "$7,500.00 MXN",
-        "imagen": "tuncul.jpg"
+        "precio": "$7,500.00 MXN"
       },
       {
         "id": 5,
@@ -137,8 +143,7 @@
           "Producto artesanal"
         ],
         "marca": "TunculArt",
-        "precio": "$6,000.00 MXN",
-        "imagen": "tunkul_ceremonial.jpg"
+        "precio": "$6,000.00 MXN"
       }
     ],
     "arpa": [
@@ -154,8 +159,7 @@
           "Hecha a mano por artesanos locales"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$18,000.00 MXN",
-        "imagen": "arpa.jpg"
+        "precio": "$18,000.00 MXN"
       }
     ],
     "flauta": [
@@ -171,8 +175,7 @@
           "Hecha a mano por artesanos"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$1,200.00 MXN",
-        "imagen": "flauta_carrizo.jpg"
+        "precio": "$1,200.00 MXN"
       }
     ],
     "tambor": [
@@ -188,8 +191,7 @@
           "Decoraciones artesanales"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$8,000.00 MXN",
-        "imagen": "tambor_ceremonial.jpg"
+        "precio": "$8,000.00 MXN"
       }
     ]
   }

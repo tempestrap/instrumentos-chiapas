@@ -146,7 +146,104 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para los instrumentos */
+/* Sección de instrumentos destacados (Primeros)*/
+.featured-instruments {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.instrument-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    gap: 40px;
+}
+
+.instrument-content {
+    flex: 1;
+}
+
+.instrument-image {
+    flex: 1;
+}
+
+.instrument-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Estilos para los elementos destacados dinámicos */
+.featured-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.featured-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.featured-characteristics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.characteristic-bubble {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* Estilos para alineación alternada */
+.right-aligned .instrument-content {
+    order: 1;
+}
+
+.right-aligned .instrument-image {
+    order: 2;
+}
+
+.left-aligned .instrument-content {
+    order: 2;
+    text-align: right;
+}
+
+.left-aligned .instrument-image {
+    order: 1;
+}
+
+/* Botón secundario */
+.secondary-button {
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #007BFF;
+    font-weight: bold;
+    border: 2px solid #007BFF;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Estilos para los instrumentos normales */
 .instrumentos-container {
     max-width: 900px;
     margin: 20px auto;
@@ -161,32 +258,55 @@ body {
     margin-bottom: 30px;
 }
 
-.instrumento img {
+.instrumento-imagen {
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
-.instrumento h1 {
-    margin-bottom: 10px;
-    color: #333;
+.guitarra-imagen {
+    background-image: url('../img/guitarra-default.jpg');
 }
 
-.descripcion, .marca, .precio {
+/* Estilos para elementos dinámicos normales */
+.instrument-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    color: #343a40;
     margin-bottom: 15px;
-    font-size: 16px;
-    color: #555;
 }
 
-.caracteristicas {
-    margin-bottom: 20px;
-    padding-left: 20px;
+.instrument-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #6c757d;
 }
 
-.caracteristicas li {
+.instrument-features {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.feature-item {
+    font-size: 0.95rem;
     margin-bottom: 8px;
+    color: #495057;
+}
+
+.instrument-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #212529;
+}
+
+.instrument-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d63031;
 }
 
 .comprar-btn {
@@ -204,6 +324,122 @@ body {
     background-color: #0056b3;
 }
 
+/* Estilos mejorados para la sección de collage */
+.collage-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .section-heading::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ff5500;
+    margin: 15px auto 0;
+  }
+  
+  .collage-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .collage-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .collage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .collage-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .collage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .collage-item:hover .collage-img {
+    transform: scale(1.05);
+  }
+  
+  .collage-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .collage-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  
+  .collage-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+  
+  .collage-price {
+    font-weight: bold;
+    color: #d63031;
+    font-size: 1.2rem;
+    margin-top: auto;
+  }
+  
+  /* Responsive para el collage */
+  @media (max-width: 768px) {
+    .collage-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .collage-img-container {
+      height: 180px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .collage-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-heading {
+      font-size: 1.6rem;
+    }
+  }
+
 /* Estilos responsive */
 @media (max-width: 992px) {
     .hero-header {
@@ -217,6 +453,10 @@ body {
     
     .subheading {
         font-size: 1.1rem;
+    }
+    
+    .featured-title {
+        font-size: 1.9rem;
     }
 }
 
@@ -242,6 +482,34 @@ body {
     .cta-button {
         padding: 12px 30px;
     }
+    
+    .instrument-feature {
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+    
+    .right-aligned .instrument-content,
+    .left-aligned .instrument-content {
+        order: 2;
+        text-align: center;
+    }
+    
+    .right-aligned .instrument-image,
+    .left-aligned .instrument-image {
+        order: 1;
+    }
+    
+    .featured-title {
+        font-size: 1.8rem;
+    }
+    
+    .featured-description {
+        font-size: 1rem;
+    }
+    
+    .instrument-name {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -264,5 +532,9 @@ body {
     
     .instrumento {
         padding: 20px;
+    }
+    
+    .featured-title {
+        font-size: 1.6rem;
     }
 }

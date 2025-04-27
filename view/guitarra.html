@@ -11,9 +11,11 @@
         <nav class="header-nav">
             <div class="site-name">La Tienda</div>
             <div class="nav-links">
-                <a href="#" class="nav-link">Inicio</a>
-                <a href="#" class="nav-link">Productos</a>
-                <a href="#" class="nav-link">Contacto</a>
+                <a href="../view/guitarra.html" class="nav-link">Guitarras</a>
+                <a href="../view/marimba.html" class="nav-link">Marimbas</a>
+                <a href="../view/tunkul.html" class="nav-link">Túnkules</a>
+                <a href="../view/arpa.html" class="nav-link">Arpas</a>
+                <a href="../view/flauta.html" class="nav-link">Flautas</a>
             </div>
             <button class="nav-button">Carrito</button>
         </nav>
@@ -25,8 +27,27 @@
         </div>
     </header>
 
+    <!-- Sección de destacados (vacía, se llenará con JS) -->
+    <section class="featured-instruments" id="destacados-guitarras">
+        <!-- Los 2 primeros instrumentos destacados se cargarán aquí -->
+    </section>
+
+    <!-- Sección de todos los instrumentos -->
     <div id="contenedor-instrumentos" class="instrumentos-container">
-        <!-- Los instrumentos se cargarán aquí dinámicamente -->
+        <!-- Todos los instrumentos se cargarán aquí dinámicamente -->
+    </div>
+
+    <!-- Sección de collage (nueva) -->
+    <section class="collage-section" id="collage-guitarras">
+      <h2 class="section-heading">Destacado y accesorios</h2>
+      <div class="collage-container">
+        <!-- Los 3 artículos se cargarán aquí dinámicamente -->
+      </div>
+    </section>
+
+    <!-- Sección de todos los instrumentos (existente) -->
+    <div id="contenedor-instrumentos" class="instrumentos-container">
+      <!-- Los instrumentos se cargarán aquí dinámicamente -->
     </div>
 
     <script src="../routes/guitarra.js"></script>
