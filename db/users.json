@@ -1,1 +1,18 @@
-[]
+[
+    {
+      "username": "admin",
+      "password": "Hola",
+      "rol": "admin"
+    },
+    {
+      "username": "usuario1",
+      "password": "nse",
+      "rol": "usuario"
+    },
+    {
+      "username": "usuario2",
+      "password": "Contra",
+      "rol": "usuario"
+    }
+  ]
+  
