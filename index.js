@@ -1,12 +1,8 @@
-// app.js
+
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PORT } from './view/config.js';
-import { pool } from './models/app.js';
-import productosRouter from "./routes/productosroutes.js";
-import registerRouter from "./routes/registroroutes.js";
-import usuarioRouter from "./routes/usuarioRoutes.js"; // Importar la nueva ruta
+import { PORT } from './config.js';
 import morgan from 'morgan';
 
 const app = express();
@@ -29,10 +25,6 @@ app.get('/registro.html', (req, res) => {
 app.use(morgan('dev'));
 app.use(express.json());
 
-// Usar las rutas
-app.use('/apl', productosRouter);
-app.use('/apl', registerRouter);
-app.use('/apl', usuarioRouter); // Agregar la nueva ruta de usuario
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
