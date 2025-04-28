@@ -1,38 +1,84 @@
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('../db/instrumentos.json')
+    fetch('../db/instrumentos.json')
       .then(response => response.json())
       .then(data => {
-          const contenedor = document.getElementById('contenedor-instrumentos');
-          const instrumentos = data.instrumentos.marimba;
-
-          if (instrumentos && instrumentos.length > 0) {
-              instrumentos.forEach(instr => {
-                  const instrumentoDiv = document.createElement('div');
-                  instrumentoDiv.className = 'instrumento';
-                  
-                  instrumentoDiv.innerHTML = `
-                      <img src="../img/${instr.imagen}" alt="${instr.nombre}">
-                      <h3>${instr.nombre}</h3>
-                      <div class="descripcion">${instr.descripcion}</div>
-                      <div class="caracteristicas">
-                          ${instr.caracteristicas.map(caracteristica => 
-                              `<p>• ${caracteristica}</p>`
-                          ).join('')}
-                      </div>
-                      <div class="marca">Marca: ${instr.marca}</div>
-                      <div class="precio">${instr.precio}</div>
-                      <button class="comprar-btn">Comprar</button>
-                  `;
-                  
-                  contenedor.appendChild(instrumentoDiv);
-              });
-          } else {
-              contenedor.innerHTML = '<p>No se encontraron marimbas disponibles.</p>';
-          }
+        const marimbas = data.instrumentos.marimba;
+        
+        loadFeaturedInstruments(marimbas.slice(0, 2)); // Primeras 2 (destacados)
+        loadCollageInstruments(marimbas); // Siguientes 3 (collage)
+        loadAllInstruments(marimbas.slice(5)); // El resto
       })
-      .catch(error => {
-          console.error('Error cargando marimbas:', error);
-          document.getElementById('contenedor-instrumentos').innerHTML = 
-              '<p>Error al cargar las marimbas. Por favor intente más tarde.</p>';
-      });
-});
+      .catch(handleError);
+  });
+  
+  function loadFeaturedInstruments(featuredmarimba) {
+    const featuredContainer = document.getElementById('destacados-marimbas');
+    
+    featuredGuitars.forEach((marimba, index) => {
+      const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
+      const imageName = `marimba${index + 2}.png`; // Usa Guitarra2.png y Guitarra3.png
+      
+      const featureDiv = document.createElement('div');
+      featureDiv.className = `instrument-feature ${alignmentClass}`;
+      
+      featureDiv.innerHTML = `
+        <div class="instrument-content">
+          <h2>${marimba.nombre}</h2>
+          <p class="featured-description">${marimba.descripcion}</p>
+          <div class="featured-characteristics">
+            ${marimba.caracteristicas.slice(0, 3).map(caract => 
+              `<span class="characteristic-bubble">${caract}</span>`
+            ).join('')}
+          </div>
+          <button class="secondary-button">Ver detalles</button>
+        </div>
+        <div class="instrument-image">
+          <img src="../img/${imageName}" alt="${marimba.nombre}">
+        </div>
+      `;
+      
+      featuredContainer.appendChild(featureDiv);
+    });
+  }
+  
+  function loadCollageInstruments(marimbas) {
+    const collageContainer = document.querySelector('.collage-container');
+    const collageGuitars = marimbas.slice(2, 5); // Tomamos las guitarras 3, 4 y 5
+  
+    collageGuitars.forEach((guitarra, index) => {
+      const collageItem = document.createElement('div');
+      collageItem.className = 'collage-item';
+      collageItem.innerHTML = `
+        <img src="../img/Guitarra${index + 4}.png" alt="${guitarra.nombre}" class="collage-img">
+        <h3 class="collage-title">${guitarra.nombre}</h3>
+        <p class="collage-description">${guitarra.descripcion}</p>
+        <div class="collage-price">${guitarra.precio}</div>
+      `;
+      collageContainer.appendChild(collageItem);
+    });
+  }
+  
+  function loadAllInstruments(guitarras) {
+    const contenedor = document.getElementById('contenedor-instrumentos');
+  
+    guitarras.forEach(guitarra => {
+      const guitarraDiv = document.createElement('div');
+      guitarraDiv.className = 'instrumento';
+      
+      guitarraDiv.innerHTML = `
+        <div class="instrumento-imagen" style="background-image: url('../img/guitarra-${guitarra.id}.jpg')"></div>
+        <h3>${guitarra.nombre}</h3>
+        <div class="descripcion">${guitarra.descripcion}</div>
+        <div class="caracteristicas">
+          ${guitarra.caracteristicas.map(caracteristica => 
+            `<p>• ${caracteristica}</p>`
+          ).join('')}
+        </div>
+        <div class="marca">Marca: ${guitarra.marca}</div>
+        <div class="precio">${guitarra.precio}</div>
+        <button class="comprar-btn">Comprar</button>
+      `;
+      
+      contenedor.appendChild(guitarraDiv);
+    });
+  }
