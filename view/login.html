@@ -54,31 +54,31 @@
 
       <button type="button" onclick="login()">Ingresar</button>
     </form>
-    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    <p>¿No tienes una cuenta? <a href="../view/registro.html">Regístrate aquí</a></p>
   </div>
 
-  <script>
-    async function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+  <!-- Tu HTML de login igual, solo agregamos este script: -->
+<script>
+  function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
   
-      const response = await fetch('controllers/login.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      });
+      // Cargar usuarios guardados
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
   
-      const data = await response.json();
+      // Buscar si existe
+      const usuario = usuarios.find(user => user.username === username && user.password === password);
   
-      if (data.success) {
-        window.location.href = "bienvenida.html"; // Redirige si el login es exitoso
+      if (usuario) {
+          alert('¡Bienvenido!');
+          window.location.href = 'bienvenida.html';
       } else {
-        alert("Credenciales incorrectas"); // Muestra un mensaje si falla
+          alert('Credenciales incorrectas.');
       }
-    }
+  }
   </script>
+  
+  
   
 </body>
 </html>
