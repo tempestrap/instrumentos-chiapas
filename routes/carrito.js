@@ -46,12 +46,17 @@ class Carrito {
     }
   
     vaciar() {
-      if (this.carrito.length === 0) return;
-      
-      if (confirm("¿Estás seguro de vaciar el carrito?")) {
-        this.carrito = [];
-        this.guardar();
-      }
+      // Vaciar el carrito en memoria
+      this.carrito = [];
+    
+      // Eliminar el carrito del localStorage
+      localStorage.removeItem('carrito');
+    
+      // Actualizar la interfaz
+      this.render();
+    
+      // Mostrar un mensaje de confirmación
+      alert('El carrito ha sido vaciado.');
     }
   
     pagar() {
