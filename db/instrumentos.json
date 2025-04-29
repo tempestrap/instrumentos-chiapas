@@ -83,14 +83,14 @@
         "nombre": "Marimba de Concierto",
         "descripcion": "Instrumento tradicional de percusión utilizado ampliamente en la música regional chiapaneca. Fabricada con maderas locales que brindan un tono cálido y resonante.",
         "caracteristicas": [
-          "4 octavas completas",
+          "5 octavas completas",
           "Afinación profesional",
           "Hecha a mano con maderas de hormiguillo y cedro",
           "Teclado curvado para un sonido más resonante",
           "Incluye baquetas personalizadas"
         ],
         "marca": "Chataneco Instruments",
-        "precio": "$45,000.00 MXN",
+        "precio": "$50,000.00 MXN",
         "cantidad": 4
       },
       {
@@ -98,7 +98,7 @@
         "nombre": "Marimba de Madera de Cedro",
         "descripcion": "Marimba artesanal de madera de cedro, utilizada en conciertos y festivales de música tradicional. Su sonido es suave y melodioso, ideal para composiciones lentas.",
         "caracteristicas": [
-          "5 octavas completas",
+          "4 octavas completas",
           "Teclado de madera de cedro",
           "Sonido dulce y melódico",
           "Baquetas incluidas",
@@ -110,7 +110,7 @@
       },
       {
         "id": 7,
-        "nombre": "Marimba de Caña de Azúcar",
+        "nombre": "Marimba ",
         "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
         "caracteristicas": [
           "4.5 octavas",
@@ -120,7 +120,7 @@
           "Perfecta para músicos experimentales"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$48,000.00 MXN",
+        "precio": "$35,000.00 MXN",
         "cantidad": 4
       },
       {
@@ -128,7 +128,7 @@
         "nombre": "Marimba de Caña de Azúcar",
         "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
         "caracteristicas": [
-          "4.5 octavas",
+          "4 octavas",
           "Teclado hecho de caña de azúcar",
           "Sonido brillante y penetrante",
           "Baquetas de madera especial",
@@ -140,17 +140,17 @@
       },
       {
         "id": 15,
-        "nombre": "Marimba de Caña de Azúcar",
+        "nombre": "Marimba de Roble",
         "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
         "caracteristicas": [
-          "4.5 octavas",
+          "5 octavas",
           "Teclado hecho de caña de azúcar",
           "Sonido brillante y penetrante",
           "Baquetas de madera especial",
           "Perfecta para músicos experimentales"
         ],
         "marca": "Sonido Chiapaneco",
-        "precio": "$48,000.00 MXN",
+        "precio": "$40,000.00 MXN",
         "cantidad": 4
       }
     ],
