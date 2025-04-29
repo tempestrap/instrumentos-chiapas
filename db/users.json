@@ -44,7 +44,7 @@
     "password": "lhlhlas",
     "email": "ulises.arias02@unach.mx",
     "rol": "usuario",
-    "isVerified": false,
+    "isVerified": true,
     "token": "bbdd548205ef0a06b37f5f75dcc5ad1f3966553229d45b31ea994d5f902b8562"
   }
 ]
