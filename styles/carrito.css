@@ -1,0 +1,22 @@
+<style>
+.cart {
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1000;
+}
+
+.cart.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+</style>
