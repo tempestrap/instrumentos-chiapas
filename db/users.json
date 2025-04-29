@@ -24,19 +24,27 @@
     "token": "sampletoken2"
   },
   {
-    "username": "Ulises027",
-    "password": "Rayaado01",
-    "email": "chaukr27@gmail.com",
-    "rol": "usuario",
-    "isVerified": false,
-    "token": "e51db768cd56e663e12c24e793d42fcb7a27f5cbd5e4d43a6fd510d1344c2695"
-  },
-  {
-    "username": "ulii",
-    "password": "asfsf",
+    "username": "ulisessss",
+    "password": "afssdsd",
     "email": "chaukr27@outlook.com",
     "rol": "usuario",
     "isVerified": false,
-    "token": "2824cdae31b13bb2fa9e39771e0d3a0cd816cdac49daa2e04b6de5b0ae64e034"
+    "token": "08b3af71a49af06daadc63699064992a1efdc917009bc3199b4273e0aa8fd2ea"
+  },
+  {
+    "username": "tutut",
+    "password": "lhlhlas",
+    "email": "chaukr27@gmail.com",
+    "rol": "usuario",
+    "isVerified": false,
+    "token": "ed7fd250170445fb4480ed2800b09f0cd6b48594f1c2f7bf9a493ad8ccaac854"
+  },
+  {
+    "username": "oyoyoyoyo",
+    "password": "lhlhlas",
+    "email": "ulises.arias02@unach.mx",
+    "rol": "usuario",
+    "isVerified": false,
+    "token": "bbdd548205ef0a06b37f5f75dcc5ad1f3966553229d45b31ea994d5f902b8562"
   }
 ]

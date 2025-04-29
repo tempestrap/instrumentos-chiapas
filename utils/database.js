@@ -6,15 +6,24 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const filePath = path.join(__dirname, '../db/users.json'); // Cambiado a 'db/users.json'
+const filePath = path.join(__dirname, '../db/users.json');
 
 // Leer usuarios
-export function readUsers() {
-  const data = fs.readFileSync(filePath);
-  return JSON.parse(data);
+export async function readUsers() {
+  try {
+      const data = await fs.promises.readFile(filePath, 'utf-8');
+      return JSON.parse(data); // Devuelve el contenido como un arreglo
+  } catch (err) {
+      console.error('Error al leer usuarios:', err);
+      return []; // Devuelve un arreglo vacío si hay un error
+  }
 }
 
 // Guardar usuarios
-export function saveUsers(users) {
-  fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+export async function saveUsers(users) {
+  try {
+      await fs.promises.writeFile(filePath, JSON.stringify(users, null, 2));
+  } catch (err) {
+      console.error('Error al guardar usuarios:', err);
+  }
 }

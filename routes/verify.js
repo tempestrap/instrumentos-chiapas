@@ -3,10 +3,10 @@ import { readUsers, saveUsers } from '../utils/database.js';
 
 const router = express.Router();
 
-router.get('/:token', (req, res) => {
+router.get('/:token', async (req, res) => {
     const { token } = req.params;
 
-    let users = readUsers();
+    let users = await readUsers();
 
     const user = users.find(user => user.token === token);
     if (!user) {
@@ -15,9 +15,9 @@ router.get('/:token', (req, res) => {
 
     user.isVerified = true;
     user.token = ''; // Limpiar el token
-    saveUsers(users);
+    await saveUsers(users);
 
     res.send('Correo verificado exitosamente. Ahora puedes iniciar sesión.');
 });
 
-export default router; // Exportar como ES Module
+export default router;

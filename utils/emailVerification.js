@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { PORT } from '../config.js'; // Asegúrate de importar correctamente PORT
 
 // Enviar correo de verificación
 export async function sendVerificationEmail(userEmail, token) {
@@ -15,13 +16,13 @@ export async function sendVerificationEmail(userEmail, token) {
     to: userEmail,
     subject: 'Verificación de correo',
     text: `Haz clic en el siguiente enlace para verificar tu correo: http://localhost:${PORT}/verify/${token}`
-  };
+};
 
-  try {
+try {
     await transporter.sendMail(mailOptions);
     console.log('Correo enviado exitosamente.');
-  } catch (error) {
-    console.error('Error al enviar correo:', error);
-  }
+} catch (error) {
+    console.error('Error al enviar correo:', error); // Registrar detalles del error
+    throw new Error('Error al enviar correo de verificación.');
 }
-
+}

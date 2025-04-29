@@ -1,5 +1,5 @@
 document.getElementById('registerForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+    event.preventDefault();
 
     // Recopilar los datos del formulario
     const username = document.getElementById('username').value.trim();
@@ -15,7 +15,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         });
 
         const result = await response.text(); // Leer respuesta del servidor
-        console.log('Respuesta del servidor:', response.status, result); // Depuración
+        console.log('Estado HTTP:', response.status); // Ver el código de estado
+        console.log('Respuesta del servidor:', result); // Ver el mensaje completo
 
         if (response.ok) {
             // Registro exitoso

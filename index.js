@@ -23,13 +23,17 @@ app.use(morgan('dev')); // Para el registro de solicitudes HTTP
 // Servir archivos estáticos desde la carpeta 'view'
 app.use(express.static(path.join(__dirname, 'view')));
 
-// Rutas para las páginas HTML
-app.get('/login.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'view', 'login.html'));
+// Rutas para las páginas principales
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'index.html')); // Página inicial
 });
 
-app.get('/registro.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'view', 'registro.html'));
+app.get('/registro', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'registro.html')); // Registro
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'login.html')); // Inicio de sesión
 });
 
 // Rutas de la API
