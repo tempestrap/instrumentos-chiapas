@@ -28,7 +28,7 @@
     "password": "afssdsd",
     "email": "chaukr27@outlook.com",
     "rol": "usuario",
-    "isVerified": false,
+    "isVerified": true,
     "token": "08b3af71a49af06daadc63699064992a1efdc917009bc3199b4273e0aa8fd2ea"
   },
   {
@@ -36,7 +36,7 @@
     "password": "lhlhlas",
     "email": "chaukr27@gmail.com",
     "rol": "usuario",
-    "isVerified": false,
+    "isVerified": true,
     "token": "ed7fd250170445fb4480ed2800b09f0cd6b48594f1c2f7bf9a493ad8ccaac854"
   },
   {
