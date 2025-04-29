@@ -2,31 +2,123 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito de Compras</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="../routes/carrito.js" defer></script> <!-- Asegúrate de que la ruta sea correcta -->
+  <link rel="stylesheet" href="carrito.css">
+  <style>
+    .carrito-container {
+      font-family: 'Arial', sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carrito-titulo {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .carrito-lista {
+      margin-bottom: 20px;
+    }
+    
+    .carrito-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .carrito-item-info {
+      flex: 1;
+      min-width: 200px;
+      margin: 5px 0;
+    }
+    
+    .carrito-item-cantidad {
+      display: flex;
+      align-items: center;
+    }
+    
+    .carrito-item-cantidad button {
+      padding: 5px 10px;
+      margin: 0 5px;
+    }
+    
+    .carrito-item-eliminar {
+      background-color: #e74c3c;
+    }
+    
+    .carrito-total {
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: right;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+    
+    .carrito-acciones {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    .carrito-vacio {
+      text-align: center;
+      padding: 20px;
+      color: #7f8c8d;
+    }
+    
+    button {
+      background-color: #16a085;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #1abc9c;
+    }
+    
+    .carrito-vaciar {
+      background-color: #e74c3c;
+    }
+    
+    .carrito-vaciar:hover {
+      background-color: #c0392b;
+    }
+    
+    .carrito-pagar {
+      background-color: #27ae60;
+    }
+    
+    .carrito-pagar:hover {
+      background-color: #2ecc71;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Carrito de Compras</h1>
-    <nav>
-      <a href="bienvenida.html">Inicio</a> <!-- Puedes agregar más enlaces aquí si es necesario -->
-      <a href="guitarra.html">Guitarra</a>
-      <a href="marimba.html">Marimba</a>
-      <a href="arpa.html">Arpa</a>
-    </nav>
-  </header>
-
-  <div class="carrito-contenedor">
-    <!-- Aquí se mostrarán los productos del carrito -->
-    <h2>Tu Carrito</h2>
-    <p>Tu carrito está vacío.</p> <!-- Este texto cambiará cuando se agreguen productos -->
+  <div class="carrito-container">
+    <h2 class="carrito-titulo">🛒 Carrito de Compras</h2>
+    <div class="carrito-lista"></div>
+    <div class="carrito-total"></div>
+    <div class="carrito-acciones">
+      <button class="carrito-vaciar">Vaciar carrito</button>
+      <button class="carrito-pagar">Procesar pago</button>
+    </div>
   </div>
 
-  <div class="carrito-footer">
-    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
-  </div>
-
+  <script src="carrito.js" type="module"></script>
 </body>
 </html>
