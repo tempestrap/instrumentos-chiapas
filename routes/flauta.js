@@ -1,18 +1,17 @@
-/**
- * Carga y muestra los instrumentos musicales (flautas) desde el JSON
- */
+let allFlautas = [];
+
 document.addEventListener('DOMContentLoaded', function() {
   fetch('../db/instrumentos.json')
     .then(response => response.json())
     .then(data => {
       const flautas = data.instrumentos.flauta;
-      
-      // Carga las secciones en orden
-      loadFeaturedInstruments(flautas.slice(0, 2)); // Primeras 2 (destacados)
-      loadCollageInstruments(flautas.slice(2, 5)); // Siguientes 3 (collage)
-      loadAllInstruments(flautas.slice(5)); // El resto
-      
-      // Agrega event listeners a los botones después de cargar todo
+      allFlautas = flautas;
+      console.log("Productos cargados:", flautas);
+
+      loadFeaturedInstruments(flautas.slice(0, 2));
+      loadCollageInstruments(flautas.slice(2, 5));
+      loadAllInstruments(flautas.slice(5));
+
       setupEventListeners();
     })
     .catch(error => {
@@ -20,6 +19,49 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('No se pudieron cargar los productos. Por favor intenta más tarde.');
     });
 });
+
+function addToCart(productId) {
+  let cart = JSON.parse(localStorage.getItem('carrito')) || [];
+  const numericId = parseInt(productId, 10);
+
+  if (!allFlautas || allFlautas.length === 0) {
+    console.error("Error: allFlautas no contiene datos.");
+    alert("No se encontraron productos para agregar al carrito.");
+    return;
+  }
+
+  const producto = allFlautas.find(f => f.id === numericId);
+  if (!producto) {
+    console.error(`Producto con ID ${numericId} no encontrado en allFlautas.`);
+    alert('Producto no encontrado');
+    return;
+  }
+
+  const existing = cart.find(item => item.id === producto.id);
+  if (existing) {
+    existing.cantidad += 1;
+  } else {
+    cart.push({
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: parseFloat(producto.precio.replace(/[^0-9.]/g, '')),
+      cantidad: 1
+    });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(cart));
+  alert(`Producto "${producto.nombre}" agregado al carrito`);
+  console.log("Carrito actualizado:", cart);
+}
+
+function setupEventListeners() {
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const productId = this.getAttribute('data-id');
+      addToCart(productId);
+    });
+  });
+}
 
 /**
  * Carga los instrumentos destacados (primera sección)
@@ -161,15 +203,7 @@ function buyNow(productId, price) {
   alert(`Redirigiendo al pago por el producto ${productId} - Total: $${price}`);
 }
 
-/**
- * Función para agregar un producto al carrito
- * @param {string} productId - ID del producto
- */
-function addToCart(productId) {
-  console.log(`Producto ${productId} agregado al carrito`);
-  // Aquí iría la lógica para agregar al carrito
-  alert(`Producto ${productId} agregado al carrito`);
-}
+
 
 /**
  * Función para manejar errores
