@@ -2,17 +2,25 @@
     {
       "username": "admin",
       "password": "Hola",
-      "rol": "admin"
+      "rol": "admin",
+      "email": "admin@correo.com",
+      "isVerified": true,
+      "token": ""
     },
     {
       "username": "usuario1",
       "password": "nse",
-      "rol": "usuario"
+      "rol": "usuario",
+      "email": "usuario1@correo.com",
+      "isVerified": false,
+      "token": "sampletoken1"
     },
     {
       "username": "usuario2",
       "password": "Contra",
-      "rol": "usuario"
+      "rol": "usuario",
+      "email": "usuario2@correo.com",
+      "isVerified": false,
+      "token": "sampletoken2"
     }
   ]
-  
