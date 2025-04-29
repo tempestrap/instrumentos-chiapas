@@ -84,7 +84,7 @@ class Carrito {
         this.total.textContent = '';
         return;
       }
-  
+    
       this.carrito.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'carrito-item';
@@ -94,20 +94,25 @@ class Carrito {
             <p>$${item.precio} c/u</p>
           </div>
           <div class="carrito-item-cantidad">
-            <button onclick="carrito.cambiarCantidad(${item.id}, -1)">−</button>
+            <button class="cantidad-restar">−</button>
             <span>${item.cantidad}</span>
-            <button onclick="carrito.cambiarCantidad(${item.id}, 1)">+</button>
+            <button class="cantidad-sumar">+</button>
           </div>
           <div class="carrito-item-info">
             <p>Subtotal: $${item.precio * item.cantidad}</p>
           </div>
           <div>
-            <button class="carrito-item-eliminar" onclick="carrito.eliminar(${item.id})">Eliminar</button>
+            <button class="carrito-item-eliminar">Eliminar</button>
           </div>
         `;
         this.lista.appendChild(itemElement);
+    
+        // Asignar eventos a los botones
+        itemElement.querySelector('.cantidad-restar').addEventListener('click', () => this.cambiarCantidad(item.id, -1));
+        itemElement.querySelector('.cantidad-sumar').addEventListener('click', () => this.cambiarCantidad(item.id, 1));
+        itemElement.querySelector('.carrito-item-eliminar').addEventListener('click', () => this.eliminar(item.id));
       });
-  
+    
       this.total.textContent = `Total: $${this.getTotal()}`;
     }
   }
