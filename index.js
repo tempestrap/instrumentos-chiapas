@@ -20,8 +20,9 @@ app.use(cors()); // Habilitar CORS para solicitudes desde diferentes orígenes
 app.use(express.json()); // Para trabajar con JSON en las solicitudes
 app.use(morgan('dev')); // Para el registro de solicitudes HTTP
 
-// Servir archivos estáticos desde la carpeta 'view'
-app.use(express.static(path.join(__dirname, 'view')));
+// Servir archivos estáticos desde la carpeta 'view' y 'styles'
+app.use(express.static(path.join(__dirname, 'view'))); // Para HTML y recursos dentro de 'view'
+app.use('/styles', express.static(path.join(__dirname, 'styles'))); // Para la carpeta de estilos
 
 // Rutas para las páginas principales
 app.get('/', (req, res) => {
