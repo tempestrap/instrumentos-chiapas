@@ -114,6 +114,34 @@
         ],
         "marca": "Sonido Chiapaneco",
         "precio": "$48,000.00 MXN"
+      },
+      {
+        "id": 14,
+        "nombre": "Marimba de Caña de Azúcar",
+        "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
+        "caracteristicas": [
+          "4.5 octavas",
+          "Teclado hecho de caña de azúcar",
+          "Sonido brillante y penetrante",
+          "Baquetas de madera especial",
+          "Perfecta para músicos experimentales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$48,000.00 MXN"
+      },
+      {
+        "id": 15,
+        "nombre": "Marimba de Caña de Azúcar",
+        "descripcion": "Marimba construida con caña de azúcar, que le da un sonido único y vibrante. Ideal para música regional y experimental.",
+        "caracteristicas": [
+          "4.5 octavas",
+          "Teclado hecho de caña de azúcar",
+          "Sonido brillante y penetrante",
+          "Baquetas de madera especial",
+          "Perfecta para músicos experimentales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$48,000.00 MXN"
       }
     ],
     "tunkul": [
@@ -144,11 +172,109 @@
         ],
         "marca": "TunculArt",
         "precio": "$6,000.00 MXN"
+      },
+      {
+        "id": 16,
+        "nombre": "Túnkul Ceremonial",
+        "descripcion": "Túnkul tradicional, utilizado en ceremonias religiosas y festivales. Su resonancia profunda marca la importancia de las tradiciones chiapanecas.",
+        "caracteristicas": [
+          "Hecho de madera de pino",
+          "Decoraciones talladas a mano",
+          "Sonido grave y ritualístico",
+          "Largo adecuado para eventos grandes",
+          "Producto artesanal"
+        ],
+        "marca": "TunculArt",
+        "precio": "$6,000.00 MXN"
+      },
+      {
+        "id": 17,
+        "nombre": "Túnkul Ceremonial",
+        "descripcion": "Túnkul tradicional, utilizado en ceremonias religiosas y festivales. Su resonancia profunda marca la importancia de las tradiciones chiapanecas.",
+        "caracteristicas": [
+          "Hecho de madera de pino",
+          "Decoraciones talladas a mano",
+          "Sonido grave y ritualístico",
+          "Largo adecuado para eventos grandes",
+          "Producto artesanal"
+        ],
+        "marca": "TunculArt",
+        "precio": "$6,000.00 MXN"
+      },
+      {
+        "id": 18,
+        "nombre": "Túnkul Ceremonial",
+        "descripcion": "Túnkul tradicional, utilizado en ceremonias religiosas y festivales. Su resonancia profunda marca la importancia de las tradiciones chiapanecas.",
+        "caracteristicas": [
+          "Hecho de madera de pino",
+          "Decoraciones talladas a mano",
+          "Sonido grave y ritualístico",
+          "Largo adecuado para eventos grandes",
+          "Producto artesanal"
+        ],
+        "marca": "TunculArt",
+        "precio": "$6,000.00 MXN"
       }
     ],
     "arpa": [
       {
         "id": 10,
+        "nombre": "Arpa Tradicional Chiapaneca",
+        "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
+        "caracteristicas": [
+          "Cuerdas de tripa",
+          "Cuerpo de madera de cedro",
+          "Sonido cálido y melodioso",
+          "Incluye un soporte para el arpa",
+          "Hecha a mano por artesanos locales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$18,000.00 MXN"
+      },
+      {
+        "id": 19,
+        "nombre": "Arpa Tradicional Chiapaneca",
+        "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
+        "caracteristicas": [
+          "Cuerdas de tripa",
+          "Cuerpo de madera de cedro",
+          "Sonido cálido y melodioso",
+          "Incluye un soporte para el arpa",
+          "Hecha a mano por artesanos locales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$18,000.00 MXN"
+      },
+      {
+        "id": 20,
+        "nombre": "Arpa Tradicional Chiapaneca",
+        "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
+        "caracteristicas": [
+          "Cuerdas de tripa",
+          "Cuerpo de madera de cedro",
+          "Sonido cálido y melodioso",
+          "Incluye un soporte para el arpa",
+          "Hecha a mano por artesanos locales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$18,000.00 MXN"
+      },
+      {
+        "id": 21,
+        "nombre": "Arpa Tradicional Chiapaneca",
+        "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
+        "caracteristicas": [
+          "Cuerdas de tripa",
+          "Cuerpo de madera de cedro",
+          "Sonido cálido y melodioso",
+          "Incluye un soporte para el arpa",
+          "Hecha a mano por artesanos locales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$18,000.00 MXN"
+      },
+      {
+        "id": 22,
         "nombre": "Arpa Tradicional Chiapaneca",
         "descripcion": "Arpa de gran tamaño, utilizada en la música tradicional chiapaneca. Produce un sonido resonante y envolvente, ideal para acompañar danzas y música folclórica.",
         "caracteristicas": [
@@ -176,11 +302,123 @@
         ],
         "marca": "Sonido Chiapaneco",
         "precio": "$1,200.00 MXN"
+      },
+      {
+        "id": 23,
+        "nombre": "Flauta de Carrizo",
+        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "caracteristicas": [
+          "Fabricada con carrizo natural",
+          "Sonido suave y melódico",
+          "Ideal para música folclórica",
+          "Fácil de transportar y tocar",
+          "Hecha a mano por artesanos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$1,200.00 MXN"
+      },
+      {
+        "id": 24,
+        "nombre": "Flauta de Carrizo",
+        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "caracteristicas": [
+          "Fabricada con carrizo natural",
+          "Sonido suave y melódico",
+          "Ideal para música folclórica",
+          "Fácil de transportar y tocar",
+          "Hecha a mano por artesanos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$1,200.00 MXN"
+      },
+      {
+        "id": 25,
+        "nombre": "Flauta de Carrizo",
+        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "caracteristicas": [
+          "Fabricada con carrizo natural",
+          "Sonido suave y melódico",
+          "Ideal para música folclórica",
+          "Fácil de transportar y tocar",
+          "Hecha a mano por artesanos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$1,200.00 MXN"
+      },
+      {
+        "id": 26,
+        "nombre": "Flauta de Carrizo",
+        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "caracteristicas": [
+          "Fabricada con carrizo natural",
+          "Sonido suave y melódico",
+          "Ideal para música folclórica",
+          "Fácil de transportar y tocar",
+          "Hecha a mano por artesanos"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$1,200.00 MXN"
       }
     ],
     "tambor": [
       {
         "id": 12,
+        "nombre": "Tambor Ceremonial",
+        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
+        "caracteristicas": [
+          "Hecho de madera maciza",
+          "Cubierto con piel de cabra",
+          "Sonido grave y resonante",
+          "Ideal para rituales y ceremonias",
+          "Decoraciones artesanales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$8,000.00 MXN"
+      },
+      {
+        "id": 27,
+        "nombre": "Tambor Ceremonial",
+        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
+        "caracteristicas": [
+          "Hecho de madera maciza",
+          "Cubierto con piel de cabra",
+          "Sonido grave y resonante",
+          "Ideal para rituales y ceremonias",
+          "Decoraciones artesanales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$8,000.00 MXN"
+      },
+      {
+        "id": 28,
+        "nombre": "Tambor Ceremonial",
+        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
+        "caracteristicas": [
+          "Hecho de madera maciza",
+          "Cubierto con piel de cabra",
+          "Sonido grave y resonante",
+          "Ideal para rituales y ceremonias",
+          "Decoraciones artesanales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$8,000.00 MXN"
+      },
+      {
+        "id": 29,
+        "nombre": "Tambor Ceremonial",
+        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
+        "caracteristicas": [
+          "Hecho de madera maciza",
+          "Cubierto con piel de cabra",
+          "Sonido grave y resonante",
+          "Ideal para rituales y ceremonias",
+          "Decoraciones artesanales"
+        ],
+        "marca": "Sonido Chiapaneco",
+        "precio": "$8,000.00 MXN"
+      },
+      {
+        "id": 30,
         "nombre": "Tambor Ceremonial",
         "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
         "caracteristicas": [
