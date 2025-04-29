@@ -79,6 +79,12 @@ function loadAllInstruments(guitarras) {
       <button class="comprar-btn">Comprar</button>
     `;
     
+    //  Aquí agregas la funcionalidad al botón de comprar
+    const botonComprar = guitarraDiv.querySelector('.comprar-btn');
+    botonComprar.addEventListener('click', function() {
+      agregarAlCarrito(guitarra); // función que crearemos para manejar el carrito
+    });
+
     contenedor.appendChild(guitarraDiv);
   });
 }
