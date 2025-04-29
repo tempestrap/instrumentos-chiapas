@@ -12,13 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       const marimbas = data.instrumentos.marimba;
-      allMarimbas = marimbas;
+      allMarimbas = marimbas; // <- Guarda los datos para usar después
 
-      // Carga las secciones en orden
-      loadFeaturedInstruments(marimbas.slice(0, 2));
-      loadCollageInstruments(marimbas.slice(2, 5));
-      loadAllInstruments(marimbas.slice(5));
       
+      // Carga las secciones en orden
+      loadFeaturedInstruments(marimbas.slice(0, 2)); // Primeras 2 (destacados)
+      loadCollageInstruments(marimbas.slice(2, 5)); // Siguientes 3 (collage)
+      loadAllInstruments(marimbas.slice(5)); // El resto
+      
+      // Agrega event listeners a los botones después de cargar todo
       setupEventListeners();
     })
     .catch(error => {
@@ -26,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('No se pudieron cargar los productos. Por favor intenta más tarde.');
     });
 });
-
 
 /**
  * Carga los instrumentos destacados (primera sección)
@@ -173,39 +174,30 @@ function buyNow(productId, price) {
  * @param {string} productId - ID del producto
  */
 function addToCart(productId) {
-  // Obtener el carrito actual desde localStorage
   let cart = JSON.parse(localStorage.getItem('carrito')) || [];
-  
-  // Buscar el producto correspondiente en los datos cargados de instrumentos.json
-  fetch('../db/instrumentos.json')
-    .then(response => response.json())
-    .then(data => {
-      const producto = data.instrumentos.marimba.find(marimba => marimba.id === productId);
-      if (!producto) return;
 
-      // Verificar si ya está en el carrito
-      const existing = cart.find(item => item.id === productId);
-      if (existing) {
-        existing.cantidad += 1;
-      } else {
-        // Si no existe, agregar el producto completo con la información adicional
-        cart.push({
-          id: producto.id,
-          nombre: producto.nombre,
-          precio: parseFloat(producto.precio.replace(/[^0-9.]/g, '')),
-          cantidad: 1
-        });
-      }
+  const producto = allMarimbas.find(m => m.id === productId);
+  if (!producto) {
+    alert('Producto no encontrado');
+    return;
+  }
 
-      // Guardar el carrito actualizado en localStorage
-      localStorage.setItem('carrito', JSON.stringify(cart));
+  const existing = cart.find(item => item.id === productId);
+  if (existing) {
+    existing.cantidad += 1;
+  } else {
+    cart.push({
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: parseFloat(producto.precio.replace(/[^0-9.]/g, '')),
+      cantidad: 1
+    });
+  }
 
-      console.log(cart);  // Verifica que el carrito se esté actualizando correctamente
-
-      alert(`Producto "${producto.nombre}" agregado al carrito`);
-    })
-    .catch(error => console.error('Error al obtener los productos para el carrito:', error));
+  localStorage.setItem('carrito', JSON.stringify(cart));
+  alert(`Producto "${producto.nombre}" agregado al carrito`);
 }
+
 
 
 /**
