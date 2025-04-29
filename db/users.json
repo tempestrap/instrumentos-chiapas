@@ -1,26 +1,42 @@
 [
-    {
-      "username": "admin",
-      "password": "Hola",
-      "rol": "admin",
-      "email": "admin@correo.com",
-      "isVerified": true,
-      "token": ""
-    },
-    {
-      "username": "usuario1",
-      "password": "nse",
-      "rol": "usuario",
-      "email": "usuario1@correo.com",
-      "isVerified": false,
-      "token": "sampletoken1"
-    },
-    {
-      "username": "usuario2",
-      "password": "Contra",
-      "rol": "usuario",
-      "email": "usuario2@correo.com",
-      "isVerified": false,
-      "token": "sampletoken2"
-    }
-  ]
+  {
+    "username": "admin",
+    "password": "Hola",
+    "rol": "admin",
+    "email": "admin@correo.com",
+    "isVerified": true,
+    "token": ""
+  },
+  {
+    "username": "usuario1",
+    "password": "nse",
+    "rol": "usuario",
+    "email": "usuario1@correo.com",
+    "isVerified": false,
+    "token": "sampletoken1"
+  },
+  {
+    "username": "usuario2",
+    "password": "Contra",
+    "rol": "usuario",
+    "email": "usuario2@correo.com",
+    "isVerified": false,
+    "token": "sampletoken2"
+  },
+  {
+    "username": "Ulises027",
+    "password": "Rayaado01",
+    "email": "chaukr27@gmail.com",
+    "rol": "usuario",
+    "isVerified": false,
+    "token": "e51db768cd56e663e12c24e793d42fcb7a27f5cbd5e4d43a6fd510d1344c2695"
+  },
+  {
+    "username": "ulii",
+    "password": "asfsf",
+    "email": "chaukr27@outlook.com",
+    "rol": "usuario",
+    "isVerified": false,
+    "token": "2824cdae31b13bb2fa9e39771e0d3a0cd816cdac49daa2e04b6de5b0ae64e034"
+  }
+]

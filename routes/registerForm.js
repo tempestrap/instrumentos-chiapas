@@ -14,19 +14,18 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             body: JSON.stringify({ username, email, password }) // Enviar datos como JSON
         });
 
-        // Manejar la respuesta del servidor
-        const result = await response.text();
-        console.log('Resultado del servidor:', result); // Mostrar en consola para depuración
+        const result = await response.text(); // Leer respuesta del servidor
+        console.log('Respuesta del servidor:', response.status, result); // Depuración
 
         if (response.ok) {
             // Registro exitoso
             alert('Registro exitoso. Revisa tu correo para verificar tu cuenta.');
         } else {
-            // Mostrar error enviado por el servidor
-            alert(`Error del servidor: ${result}`);
+            // Mostrar mensaje de error enviado por el servidor
+            alert(`Error: ${result}`);
         }
     } catch (error) {
         console.error('Error en el fetch:', error); // Mostrar detalles del error en la consola
-        alert('Ocurrió un problema durante el registro.');
+        alert('Ocurrió un problema al comunicarse con el servidor.');
     }
 });

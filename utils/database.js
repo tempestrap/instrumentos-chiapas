@@ -1,5 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Obtener __dirname equivalente en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const filePath = path.join(__dirname, '../db/users.json'); // Cambiado a 'db/users.json'
 
@@ -13,4 +18,3 @@ export function readUsers() {
 export function saveUsers(users) {
   fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 }
-

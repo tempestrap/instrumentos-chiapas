@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const { readUsers, saveUsers } = require('../utils/database');
+import express from 'express';
+import { readUsers, saveUsers } from '../utils/database.js';
 
-// Ruta de verificación
+const router = express.Router();
+
 router.get('/:token', (req, res) => {
     const { token } = req.params;
 
@@ -14,10 +14,10 @@ router.get('/:token', (req, res) => {
     }
 
     user.isVerified = true;
-    user.token = ''; // Limpiar el token para evitar reutilización
+    user.token = ''; // Limpiar el token
     saveUsers(users);
 
     res.send('Correo verificado exitosamente. Ahora puedes iniciar sesión.');
 });
 
-module.exports = router;
+export default router; // Exportar como ES Module
