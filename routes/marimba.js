@@ -1,9 +1,4 @@
 let allMarimbas = [];
-
-
-
-
-
 /**
  * Carga y muestra los instrumentos musicales desde el JSON
  */
@@ -13,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       const marimbas = data.instrumentos.marimba;
       allMarimbas = marimbas; // <- Guarda los datos para usar después
-
+      console.log("Productos cargados:", marimbas);
       
       // Carga las secciones en orden
       loadFeaturedInstruments(marimbas.slice(0, 2)); // Primeras 2 (destacados)
@@ -176,13 +171,26 @@ function buyNow(productId, price) {
 function addToCart(productId) {
   let cart = JSON.parse(localStorage.getItem('carrito')) || [];
 
-  const producto = allMarimbas.find(m => m.id === productId);
+  // Convertir productId a número
+  const numericId = parseInt(productId, 10);
+
+  // Verificar que allMarimbas tenga datos
+  if (!allMarimbas || allMarimbas.length === 0) {
+    console.error("Error: allMarimbas no contiene datos.");
+    alert("No se encontraron productos para agregar al carrito.");
+    return;
+  }
+
+  // Buscar el producto en allMarimbas
+  const producto = allMarimbas.find(m => m.id === numericId);
   if (!producto) {
+    console.error(`Producto con ID ${numericId} no encontrado en allMarimbas.`);
     alert('Producto no encontrado');
     return;
   }
 
-  const existing = cart.find(item => item.id === productId);
+  // Verificar si el producto ya está en el carrito
+  const existing = cart.find(item => item.id === producto.id);
   if (existing) {
     existing.cantidad += 1;
   } else {
@@ -194,8 +202,10 @@ function addToCart(productId) {
     });
   }
 
+  // Guardar el carrito actualizado en localStorage
   localStorage.setItem('carrito', JSON.stringify(cart));
   alert(`Producto "${producto.nombre}" agregado al carrito`);
+  console.log("Carrito actualizado:", cart);
 }
 
 
