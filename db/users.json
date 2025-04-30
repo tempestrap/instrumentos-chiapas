@@ -36,5 +36,12 @@
     "email": "chauk3456@gmail.com",
     "rol": "usuario",
     "isVerified": true
+  },
+  {
+    "username": "TEMPEST",
+    "password": "asdf",
+    "email": "marquitosfer09@gmail.com",
+    "rol": "usuario",
+    "isVerified": true
   }
 ]

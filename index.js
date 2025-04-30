@@ -34,7 +34,7 @@ app.use('/scripts', express.static(path.join(__dirname, 'routes'))); // Para arc
 
 
 // Servir archivos estáticos desde la carpeta 'view' y 'styles'
-app.use(express.static(path.join(__dirname, 'view'))); // Para HTML y recursos dentro de 'view'
+app.use('/view', express.static(path.join(__dirname, 'view')));
 app.use('/styles', express.static(path.join(__dirname, 'styles'))); // Para estilos
 
 // Rutas para las páginas principales
