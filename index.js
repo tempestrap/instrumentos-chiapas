@@ -27,6 +27,7 @@ app.use(express.json()); // Para trabajar con JSON en las solicitudes
 app.use(morgan('dev'));  // Para el registro de solicitudes HTTP
 // Servir archivos estáticos desde la carpeta 'img'
 // Configurar recursos estáticos
+app.use('/db', express.static(path.join(__dirname, 'db'))); // Para la base de datos
 app.use('/img', express.static(path.join(__dirname, 'img'))); // Para imágenes
 app.use('/styles', express.static(path.join(__dirname, 'styles'))); // Para estilos
 app.use('/scripts', express.static(path.join(__dirname, 'routes'))); // Para archivos JS en routes

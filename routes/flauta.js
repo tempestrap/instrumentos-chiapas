@@ -1,7 +1,7 @@
 let allFlautas = [];
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('../db/instrumentos.json')
+  fetch('/db/instrumentos.json')
     .then(response => response.json())
     .then(data => {
       const flautas = data.instrumentos.flauta;
