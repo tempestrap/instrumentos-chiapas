@@ -57,8 +57,8 @@ router.post('/', async (req, res) => {
     // Enviar el ticket por correo
     await enviarTicketCorreo(correo, 'Tu ticket de compra - Instrumentos Chiapanecos', ticketHTML);
 
-    // Responder al cliente
-    res.status(200).send('Compra procesada con éxito. Revisa tu correo para más detalles.');
+    // Responder al cliente con redirección a bienvenida
+    res.status(200).send({ message: 'Compra procesada con éxito. Revisa tu correo para más detalles.', redirect: '/view/bienvenida.html' });
   } catch (error) {
     console.error('Error al procesar la compra:', error);
     res.status(500).send('Ocurrió un problema al procesar la compra.');
