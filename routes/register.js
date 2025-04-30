@@ -1,7 +1,7 @@
 import express from 'express';
 import crypto from 'crypto';
 import { readUsers, saveUsers } from '../utils/database.js';
-import { sendVerificationEmail } from '../utils/emailVerification.js';
+import { enviarCorreo } from '../utils/emailVerification.js';
 
 const router = express.Router();
 
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         await saveUsers(users);
 
         try {
-            await sendVerificationEmail(email, token);
+            await enviarCorreo(destinatario, asunto, contenidoHTML);
         } catch (emailError) {
             console.error('Error al enviar correo:', emailError);
             return res.status(500).send('Registro completado, pero ocurrió un problema al enviar el correo de verificación.');

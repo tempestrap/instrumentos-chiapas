@@ -1,28 +1,26 @@
 import nodemailer from 'nodemailer';
-import { PORT } from '../config.js'; // Asegúrate de importar correctamente PORT
 
-// Enviar correo de verificación
-export async function sendVerificationEmail(userEmail, token) {
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'tuemail@gmail.com', // Reemplaza por tu correo
-      pass: 'tucontraseña'       // Reemplaza por tu contraseña
-    }
-  });
+// Configuración del transporte de correo
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Puedes usar otro servicio como Outlook, Yahoo, etc.
+  auth: {
+    user: 'marquitosfer09@gmail.com', // Reemplaza con tu correo
+    pass: 'AAaa1100++' // Reemplaza con tu contraseña de aplicación
+  }
+});
 
-  const mailOptions = {
-    from: 'tuemail@gmail.com',
-    to: userEmail,
-    subject: 'Verificación de correo',
-    text: `Haz clic en el siguiente enlace para verificar tu correo: http://localhost:${PORT}/verify/${token}`
-};
+// Función para enviar el correo
+export async function enviarCorreo(destinatario, asunto, contenidoHTML) {
+  try {
+    const info = await transporter.sendMail({
+      from: '"Instrumentos Chiapanecos" <marquitosfer09@gmail.com>', // Remitente
+      to: destinatario, // Destinatario
+      subject: asunto, // Asunto del correo
+      html: contenidoHTML // Contenido en formato HTML
+    });
 
-try {
-    await transporter.sendMail(mailOptions);
-    console.log('Correo enviado exitosamente.');
-} catch (error) {
-    console.error('Error al enviar correo:', error); // Registrar detalles del error
-    throw new Error('Error al enviar correo de verificación.');
-}
+    console.log('Correo enviado:', info.messageId);
+  } catch (error) {
+    console.error('Error al enviar el correo:', error);
+  }
 }

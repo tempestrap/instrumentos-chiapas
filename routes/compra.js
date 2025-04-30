@@ -1,51 +1,68 @@
-document.getElementById('compraForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-  
-    // Recopilar los datos del formulario
-    const nombre = document.getElementById('nombre').value.trim();
-    const direccion = document.getElementById('direccion').value.trim();
-    const ciudad = document.getElementById('ciudad').value.trim();
-    const estado = document.getElementById('estado').value.trim();
-    const codigoPostal = document.getElementById('codigoPostal').value.trim();
-    const tarjeta = document.getElementById('tarjeta').value.trim();
-    const fechaExpiracion = document.getElementById('fechaExpiracion').value.trim();
-    const cvv = document.getElementById('cvv').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-  
-    // Validar los datos (puedes agregar más validaciones según sea necesario)
-    if (!nombre || !direccion || !ciudad || !estado || !codigoPostal || !tarjeta || !fechaExpiracion || !cvv || !correo) {
-      alert('Por favor, completa todos los campos.');
-      return;
-    }
-  
-    try {
-      // Simular el envío de los datos al servidor
-      const response = await fetch('/compra', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nombre,
-          direccion,
-          ciudad,
-          estado,
-          codigoPostal,
-          tarjeta,
-          fechaExpiracion,
-          cvv,
-          correo
-        })
-      });
-  
-      const result = await response.text();
-      if (response.ok) {
-        alert('Compra realizada con éxito. Revisa tu correo para más detalles.');
-        localStorage.removeItem('carrito'); // Vaciar el carrito después de la compra
-        window.location.href = 'bienvenida.html'; // Redirigir a la página de bienvenida
-      } else {
-        alert(`Error: ${result}`);
-      }
-    } catch (error) {
-      console.error('Error en la compra:', error);
-      alert('Ocurrió un problema al procesar la compra.');
-    }
-  });
+import express from 'express';
+import nodemailer from 'nodemailer';
+
+const router = express.Router();
+
+// Configuración del transporte de correo
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'marquitosfer09@gmail.com', // Reemplaza con tu correo
+    pass: 'AAaa1100++'       // Reemplaza con tu contraseña de aplicación
+  }
+});
+
+// Función para enviar el correo con el ticket
+async function enviarTicketCorreo(destinatario, asunto, contenidoHTML) {
+  const mailOptions = {
+    from: 'marquitosfer09@gmail.com',
+    to: destinatario,
+    subject: asunto,
+    html: contenidoHTML
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log('Correo enviado exitosamente.');
+  } catch (error) {
+    console.error('Error al enviar correo:', error);
+    throw new Error('Error al enviar el ticket de compra.');
+  }
+}
+
+// Ruta para procesar la compra
+router.post('/', async (req, res) => {
+  const { nombre, direccion, ciudad, estado, codigoPostal, correo, productos } = req.body;
+
+  try {
+    // Calcular el precio total
+    const total = productos.reduce((sum, producto) => sum + producto.precio * producto.cantidad, 0);
+
+    // Generar el contenido del ticket
+    const fecha = new Date();
+    const ticketHTML = `
+      <h1>Gracias por tu compra, ${nombre}!</h1>
+      <p><strong>Fecha:</strong> ${fecha.toLocaleDateString()} ${fecha.toLocaleTimeString()}</p>
+      <p><strong>Dirección de envío:</strong> ${direccion}, ${ciudad}, ${estado}, ${codigoPostal}</p>
+      <h2>Detalles de la compra:</h2>
+      <ul>
+        ${productos.map(producto => `
+          <li>${producto.nombre} - ${producto.cantidad} x $${producto.precio.toFixed(2)}</li>
+        `).join('')}
+      </ul>
+      <h3>Total: $${total.toFixed(2)}</h3>
+      <p>¡Esperamos que disfrutes tus instrumentos!</p>
+    `;
+
+    // Enviar el ticket por correo
+    await enviarTicketCorreo(correo, 'Tu ticket de compra - Instrumentos Chiapanecos', ticketHTML);
+
+    // Responder al cliente
+    res.status(200).send('Compra procesada con éxito. Revisa tu correo para más detalles.');
+  } catch (error) {
+    console.error('Error al procesar la compra:', error);
+    res.status(500).send('Ocurrió un problema al procesar la compra.');
+  }
+});
+
+export default router;
