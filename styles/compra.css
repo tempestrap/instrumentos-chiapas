@@ -1,35 +1,37 @@
 /* Estilo general */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   
   /* Contenedor principal */
   .compra-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 20px 30px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
   }
   
-  /* Títulos */
+  /* Título principal */
   .compra-container h2 {
     text-align: center;
-    color: #333333;
+    color: #503434; /* Color oscuro similar al header */
     margin-bottom: 20px;
   }
   
+  /* Subtítulos */
   .compra-container h3 {
-    color: #555555;
+    color: #333333;
     margin-bottom: 10px;
+    border-bottom: 2px solid #16a085;
+    padding-bottom: 5px;
   }
   
   /* Etiquetas y campos de entrada */
@@ -46,29 +48,49 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #cccccc;
-    border-radius: 4px;
+    border-radius: 6px;
     box-sizing: border-box;
+    font-size: 14px;
   }
   
   input[type="text"]:focus,
   input[type="email"]:focus {
-    border-color: #007bff;
+    border-color: #16a085;
     outline: none;
   }
   
   /* Botón de envío */
   button[type="submit"] {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #16a085;
     color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #1abc9c;
+  }
+  
+  /* Estilo para mensajes de error o éxito */
+  .alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .alert.error {
+    background-color: #ffcccc;
+    color: #cc0000;
+  }
+  
+  .alert.success {
+    background-color: #ccffcc;
+    color: #006600;
   }
