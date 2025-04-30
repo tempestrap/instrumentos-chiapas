@@ -72,7 +72,7 @@ function loadFeaturedInstruments(featuredFlautas) {
   
   featuredFlautas.forEach((flauta, index) => {
     const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = `Flauta${index + 2}.png`; // Asume nombres como Flauta1.png, Flauta2.png
+    const imageName = `flauta${index + 2}.png`; // Asume nombres como Flauta1.png, Flauta2.png
     
     const featureDiv = document.createElement('div');
     featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -115,7 +115,7 @@ function loadCollageInstruments(flautas) {
     const collageItem = document.createElement('div');
     collageItem.className = 'collage-item';
     collageItem.innerHTML = `
-      <img src="../img/Flauta${index + 4}.png" alt="${flauta.nombre}" class="collage-img">
+      <img src="../img/flauta${index + 4}.png" alt="${flauta.nombre}" class="collage-img">
       <h3 class="collage-title">${flauta.nombre}</h3>
       <p class="collage-description">${flauta.descripcion}</p>
       <div class="collage-price">${flauta.precio}</div>
@@ -144,7 +144,7 @@ function loadAllInstruments(flautas) {
     flautaDiv.className = 'instrumento';
     
     flautaDiv.innerHTML = `
-      <div class="instrumento-imagen" style="background-image: url('../img/flauta-${flauta.id}.jpg')"></div>
+      <div class="instrumento-imagen" style="background-image: url('../img/flauta${flauta.id}.jpg')"></div>
       <h3>${flauta.nombre}</h3>
       <div class="descripcion">${flauta.descripcion}</div>
       <div class="caracteristicas">

@@ -72,7 +72,7 @@ function loadFeaturedInstruments(featuredHarpas) {
   
   featuredHarpas.forEach((arpa, index) => {
     const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = `Arpa${index + 1}.png`; // Cambiado a convención similar a guitarras
+    const imageName = `arpa${index + 1}.png`; // Cambiado a convención similar a guitarras
     
     const featureDiv = document.createElement('div');
     featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -144,7 +144,7 @@ function loadAllInstruments(arpas) {
     arpaDiv.className = 'instrumento';
     
     arpaDiv.innerHTML = `
-      <div class="instrumento-imagen" style="background-image: url('../img/arpa-${arpa.id}.png')"></div>
+      <div class="instrumento-imagen" style="background-image: url('../img/arpa${arpa.id}.png')"></div>
       <h3>${arpa.nombre}</h3>
       <div class="descripcion">${arpa.descripcion}</div>
       <div class="caracteristicas">

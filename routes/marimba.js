@@ -33,7 +33,7 @@ function loadFeaturedInstruments(featuredMarimbas) {
   
   featuredMarimbas.forEach((marimba, index) => {
     const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = `Marimba${index + 2}.png`;
+    const imageName = `marimba${index + 2}.png`;
     
     const featureDiv = document.createElement('div');
     featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -76,7 +76,7 @@ function loadCollageInstruments(marimbas) {
     const collageItem = document.createElement('div');
     collageItem.className = 'collage-item';
     collageItem.innerHTML = `
-      <img src="../img/Marimba${index + 4}.png" alt="${marimba.nombre}" class="collage-img">
+      <img src="../img/marimba${index + 4}.png" alt="${marimba.nombre}" class="collage-img">
       <h3 class="collage-title">${marimba.nombre}</h3>
       <p class="collage-description">${marimba.descripcion}</p>
       <div class="collage-price">${marimba.precio}</div>
@@ -105,7 +105,7 @@ function loadAllInstruments(marimbas) {
     marimbaDiv.className = 'instrumento';
     
     marimbaDiv.innerHTML = `
-      <div class="instrumento-imagen" style="background-image: url('../img/marimba-${marimba.id}.jpg')"></div>
+      <div class="instrumento-imagen" style="background-image: url('../img/marimba${marimba.id}.png')"></div>
       <h3>${marimba.nombre}</h3>
       <div class="descripcion">${marimba.descripcion}</div>
       <div class="caracteristicas">

@@ -72,7 +72,7 @@ function setupEventListeners() {
     
     featuredTunkules.forEach((tunkul, index) => {
       const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-      const imageName = `Tunkul${index + 2}.png`;
+      const imageName = `tunkul${index + 2}.png`;
       
       const featureDiv = document.createElement('div');
       featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -115,7 +115,7 @@ function setupEventListeners() {
       const collageItem = document.createElement('div');
       collageItem.className = 'collage-item';
       collageItem.innerHTML = `
-        <img src="../img/Tunkul${index + 4}.png" alt="${tunkul.nombre}" class="collage-img">
+        <img src="../img/tunkul${index + 4}.png" alt="${tunkul.nombre}" class="collage-img">
         <h3 class="collage-title">${tunkul.nombre}</h3>
         <p class="collage-description">${tunkul.descripcion}</p>
         <div class="collage-price">${tunkul.precio}</div>
