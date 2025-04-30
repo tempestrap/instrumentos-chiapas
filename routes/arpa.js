@@ -72,7 +72,7 @@ function loadFeaturedInstruments(featuredHarpas) {
   
   featuredHarpas.forEach((arpa, index) => {
     const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = `Arpa${index + 2}.png`; // Asumiendo que las imágenes se llaman Arpa1.png, Arpa2.png, etc.
+    const imageName = arpa.imagen; // Asumiendo que las imágenes se llaman Arpa1.png, Arpa2.png, etc.
     
     const featureDiv = document.createElement('div');
     featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -96,7 +96,7 @@ function loadFeaturedInstruments(featuredHarpas) {
         </div>
       </div>
       <div class="instrument-image">
-        <img src="../img/${imageName}" alt="${arpa.nombre}">
+        <img src="../img/arpa${imageName}" alt="${arpa.nombre}">
       </div>
     `;
     
@@ -115,7 +115,7 @@ function loadCollageInstruments(arpas) {
     const collageItem = document.createElement('div');
     collageItem.className = 'collage-item';
     collageItem.innerHTML = `
-      <img src="../img/Arpa${index + 4}.png" alt="${arpa.nombre}" class="collage-img">
+      <img src="../img/arpa${index + 2}.png" alt="${arpa.nombre}" class="collage-img">
       <h3 class="collage-title">${arpa.nombre}</h3>
       <p class="collage-description">${arpa.descripcion}</p>
       <div class="collage-price">${arpa.precio}</div>
@@ -144,7 +144,7 @@ function loadAllInstruments(arpas) {
     arpaDiv.className = 'instrumento';
     
     arpaDiv.innerHTML = `
-      <div class="instrumento-imagen" style="background-image: url('../img/arpa-${arpa.id}.jpg')"></div>
+      <div class="instrumento-imagen" style="background-image: url('../img/arpa-${arpa.id}.png')"></div>
       <h3>${arpa.nombre}</h3>
       <div class="descripcion">${arpa.descripcion}</div>
       <div class="caracteristicas">
