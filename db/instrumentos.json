@@ -326,8 +326,8 @@
       },
       {
         "id": 23,
-        "nombre": "Flauta de Carrizo",
-        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "nombre": "Flauta de Cedro",
+        "descripcion": "Flauta tradicional hecha de cedro, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
         "caracteristicas": [
           "Fabricada con carrizo natural",
           "Sonido suave y melódico",
@@ -341,8 +341,8 @@
       },
       {
         "id": 24,
-        "nombre": "Flauta de Carrizo",
-        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "nombre": "Flauta de Abedul",
+        "descripcion": "Flauta tradicional hecha de abedul, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
         "caracteristicas": [
           "Fabricada con carrizo natural",
           "Sonido suave y melódico",
@@ -356,8 +356,8 @@
       },
       {
         "id": 25,
-        "nombre": "Flauta de Carrizo",
-        "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
+        "nombre": "Flauta de roble",
+        "descripcion": "Flauta tradicional hecha de roble, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
         "caracteristicas": [
           "Fabricada con carrizo natural",
           "Sonido suave y melódico",
