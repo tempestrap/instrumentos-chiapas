@@ -68,11 +68,11 @@ function setupEventListeners() {
  * @param {Array} featuredHarpas - Array de arpas destacadas
  */
 function loadFeaturedInstruments(featuredHarpas) {
-  const featuredContainer = document.getElementById('destacados-guitarras'); // Puedes cambiar el ID si lo prefieres
+  const featuredContainer = document.getElementById('destacados-guitarras'); // Cambia este ID si es diferente
   
   featuredHarpas.forEach((arpa, index) => {
     const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = arpa.imagen; // Asumiendo que las imágenes se llaman Arpa1.png, Arpa2.png, etc.
+    const imageName = `Arpa${index + 1}.png`; // Cambiado a convención similar a guitarras
     
     const featureDiv = document.createElement('div');
     featureDiv.className = `instrument-feature ${alignmentClass}`;
@@ -96,7 +96,7 @@ function loadFeaturedInstruments(featuredHarpas) {
         </div>
       </div>
       <div class="instrument-image">
-        <img src="../img/arpa${imageName}" alt="${arpa.nombre}">
+        <img src="../img/${imageName}" alt="${arpa.nombre}">
       </div>
     `;
     
