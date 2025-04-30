@@ -18,9 +18,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors()); // Habilitar CORS para solicitudes desde diferentes orígenes
+app.use(cors({
+  origin: 'http://127.0.0.1:5500', // Permitir solicitudes desde Live Server
+  methods: ['GET', 'POST'],        // Métodos permitidos
+  credentials: true                // Opcional: incluir cookies si es necesario
+}));
 app.use(express.json()); // Para trabajar con JSON en las solicitudes
-app.use(morgan('dev')); // Para el registro de solicitudes HTTP
+app.use(morgan('dev'));  // Para el registro de solicitudes HTTP
+// Servir archivos estáticos desde la carpeta 'img'
+app.use('/img', express.static(path.join(__dirname, 'img')));
+
 
 // Servir archivos estáticos desde la carpeta 'view' y 'styles'
 app.use(express.static(path.join(__dirname, 'view'))); // Para HTML y recursos dentro de 'view'

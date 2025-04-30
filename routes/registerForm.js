@@ -10,7 +10,9 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         // Enviar los datos al servidor usando fetch
         const response = await fetch('http://localhost:3000/register', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ username, email, password }) // Enviar datos como JSON
         });
 
