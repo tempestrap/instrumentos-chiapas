@@ -48,11 +48,11 @@
 <body>
   <div class="login-container">
     <img src="../img/instrumentos chiapas.jpg" alt="Logo" width="350">
-    <h2>Iniciar Sesión</h2>
-    <form action="#">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
       <label for="username">Usuario:</label>
       <input type="text" id="username" name="username" required>
-      <label for="password">Contraseña:</label>
+      <label for="password">Contraseña:</label>
       <input type="password" id="password" name="password" required>
 
       <button type="button" onclick="login()">Ingresar</button>
@@ -60,28 +60,35 @@
     <p>¿No tienes una cuenta? <a href="../view/registro.html">Regístrate aquí</a></p>
   </div>
 
-  <!-- Tu HTML de login igual, solo agregamos este script: -->
-<script>
-  function login() {
+  <script>
+    async function login() {
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
-  
-      // Cargar usuarios guardados
-      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-  
-      // Buscar si existe
-      const usuario = usuarios.find(user => user.username === username && user.password === password);
-  
-      if (usuario) {
-          alert('¡Bienvenido!');
-          window.location.href = 'bienvenida.html';
-      } else {
-          alert('Credenciales incorrectas.');
+
+      try {
+          const response = await fetch('http://localhost:3000/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, password }) // Enviar datos como JSON
+          });
+
+          const result = await response.text(); // Leer respuesta del servidor
+          console.log('Estado HTTP:', response.status); // Ver el código de estado
+          console.log('Respuesta del servidor:', result); // Mostrar el mensaje completo
+
+          if (response.ok) {
+              // Inicio de sesión exitoso
+              alert(result);
+              window.location.href = 'bienvenida.html'; // Redirigir al usuario
+          } else {
+              // Mostrar el mensaje de error enviado por el servidor
+              alert(`Error: ${result}`);
+          }
+      } catch (error) {
+          console.error('Error en el fetch:', error); // Mostrar detalles del error
+          alert('Ocurrió un problema al comunicarse con el servidor.');
       }
-  }
+    }
   </script>
-  
-  
-  
 </body>
 </html>
