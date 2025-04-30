@@ -17,7 +17,7 @@ body {
 
 /* Contenedor principal del hero con imagen de fondo */
 .hero-header {
-  background-image: url('../img/Guitarra1.png');
+  background-image: url('/img/Guitarra1.png');
   background-size: cover;
   background-position: center;
   height: 50vh; /* Altura reducida para mejor proporción */
