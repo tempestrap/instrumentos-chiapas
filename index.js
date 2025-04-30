@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { PORT } from './config.js';
 import morgan from 'morgan';
 import cors from 'cors';
+import compraRouter from './routes/compra.js';
 
 // Importar rutas de registro y verificación
 import registerRoute from './routes/register.js';
@@ -40,6 +41,7 @@ app.get('/login', (req, res) => {
 // Rutas de la API
 app.use('/register', registerRoute); // Ruta para registro
 app.use('/verify', verifyRoute);     // Ruta para verificación de correos
+app.use('/compra', compraRouter);
 
 // Iniciar el servidor
 app.listen(PORT, () => {

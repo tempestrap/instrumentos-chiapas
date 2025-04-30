@@ -200,9 +200,8 @@ function setupEventListeners() {
  * @param {string} price - Precio del producto
  */
 function buyNow(productId, price) {
-  console.log(`Compra inmediata del producto ${productId} por $${price}`);
-  // Aquí iría la lógica para redirigir al proceso de pago
-  alert(`Redirigiendo al pago por el producto ${productId} - Total: $${price}`);
+  localStorage.setItem('productoSeleccionado', JSON.stringify({ productId, price }));
+  window.location.href = '../view/compra.html';
 }
 
 /**

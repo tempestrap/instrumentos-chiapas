@@ -64,12 +64,9 @@ class Carrito {
         alert("El carrito está vacío");
         return;
       }
-      
-      if (confirm(`¿Confirmar compra por $${this.getTotal()}?`)) {
-        alert("Compra realizada");
-        this.carrito = [];
-        this.guardar();
-      }
+    
+      localStorage.setItem('productosCompra', JSON.stringify(this.carrito));
+      window.location.href = '../view/compra.html';
     }
   
     getTotal() {

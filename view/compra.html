@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra</title>
+  <link rel="stylesheet" href="../styles/compra.css">
+</head>
+<body>
+  <div class="compra-container">
+    <h2>Finalizar Compra</h2>
+    <form id="compraForm">
+      <h3>Datos de Envío</h3>
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required>
+      
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" required>
+      
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" required>
+      
+      <label for="codigoPostal">Código Postal:</label>
+      <input type="text" id="codigoPostal" name="codigoPostal" required>
+      
+      <h3>Datos de Pago</h3>
+      <label for="tarjeta">Número de Tarjeta:</label>
+      <input type="text" id="tarjeta" name="tarjeta" maxlength="16" required>
+      
+      <label for="fechaExpiracion">Fecha de Expiración:</label>
+      <input type="text" id="fechaExpiracion" name="fechaExpiracion" placeholder="MM/AA" required>
+      
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" maxlength="3" required>
+      
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+      
+      <button type="submit">Realizar Compra</button>
+    </form>
+  </div>
+
+  <script src="../routes/compra.js" type="module"></script>
+</body>
+</html>
