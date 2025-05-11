@@ -20,15 +20,7 @@
         "id": 6,
         "nombre": "Guitarra Eléctrica Chiapaneca",
         "descripcion": "Guitarra eléctrica con un diseño único inspirado en la cultura chiapaneca, ideal para músicos que buscan un sonido potente y brillante.",
-        "caracteristicas": [
-          "Cuerpo de aliso",
-          "Pastillas Humbucker",
-          "Mástil de arce",
-          "Sistema de trémolo",
-          "Perfecta para rock y blues"
-        ],
-        "marca": "Chataneco Instruments",
-        "precio": "$7,500.00 MXN",
+        "precio": 10,
         "cantidad": 4
       },
       {
@@ -418,36 +410,6 @@
       },
       {
         "id": 28,
-        "nombre": "Tambor Ceremonial",
-        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
-        "caracteristicas": [
-          "Hecho de madera maciza",
-          "Cubierto con piel de cabra",
-          "Sonido grave y resonante",
-          "Ideal para rituales y ceremonias",
-          "Decoraciones artesanales"
-        ],
-        "marca": "Sonido Chiapaneco",
-        "precio": "$8,000.00 MXN",
-        "cantidad": 4
-      },
-      {
-        "id": 29,
-        "nombre": "Tambor Ceremonial",
-        "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
-        "caracteristicas": [
-          "Hecho de madera maciza",
-          "Cubierto con piel de cabra",
-          "Sonido grave y resonante",
-          "Ideal para rituales y ceremonias",
-          "Decoraciones artesanales"
-        ],
-        "marca": "Sonido Chiapaneco",
-        "precio": "$8,000.00 MXN",
-        "cantidad": 4
-      },
-      {
-        "id": 30,
         "nombre": "Tambor Ceremonial",
         "descripcion": "Tambor ceremonial utilizado en rituales y celebraciones chiapanecas. Produce un sonido profundo que marca el ritmo de las danzas tradicionales.",
         "caracteristicas": [

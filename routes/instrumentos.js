@@ -20,19 +20,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Agregar instrumento
-router.post('/', async (req, res) => {
-    try {
-        const { categoria, instrumento } = req.body;
-        const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
-        data.instrumentos[categoria].push(instrumento);
-        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
-        res.status(201).send('Instrumento agregado.');
-    } catch (error) {
-        res.status(500).send('Error al agregar el instrumento.');
-    }
-});
-
 // Eliminar instrumento
 router.delete('/:categoria/:id', async (req, res) => {
     try {
@@ -43,6 +30,24 @@ router.delete('/:categoria/:id', async (req, res) => {
         res.status(200).send('Instrumento eliminado.');
     } catch (error) {
         res.status(500).send('Error al eliminar el instrumento.');
+    }
+});
+
+// Editar instrumento
+router.put('/:categoria/:id', async (req, res) => {
+    try {
+        const { categoria, id } = req.params;
+        const { instrumento } = req.body;
+        const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+        const index = data.instrumentos[categoria].findIndex(i => i.id === parseInt(id, 10));
+        if (index === -1) {
+            return res.status(404).send('Instrumento no encontrado.');
+        }
+        data.instrumentos[categoria][index] = instrumento;
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+        res.status(200).send('Instrumento actualizado.');
+    } catch (error) {
+        res.status(500).send('Error al actualizar el instrumento.');
     }
 });
 
