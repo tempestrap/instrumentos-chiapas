@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -10,13 +10,13 @@ const filePath = path.join(__dirname, '../db/users.json');
 
 // Leer usuarios
 export async function readUsers() {
-  try {
-      const data = await fs.promises.readFile(filePath, 'utf-8');
-      return JSON.parse(data); // Devuelve el contenido como un arreglo
-  } catch (err) {
-      console.error('Error al leer usuarios:', err);
-      return []; // Devuelve un arreglo vacío si hay un error
-  }
+    try {
+        const data = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(data); // Devuelve el contenido como un arreglo
+    } catch (err) {
+        console.error('Error al leer usuarios:', err);
+        return []; // Devuelve un arreglo vacío si hay un error
+    }
 }
 
 // Guardar usuarios

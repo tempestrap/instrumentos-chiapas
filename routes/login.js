@@ -1,30 +1,41 @@
 import express from 'express';
-import { readUsers } from '../utils/database.js';
+import { readUsers } from '../utils/database.js'; // Función para leer usuarios desde la base de datos
 
 const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        console.log('Datos recibidos:', req.body);
 
-        // Leer los usuarios desde la base de datos
+        const { username, password } = req.body;
         const users = await readUsers();
 
-        // Buscar un usuario que coincida con username y password
+        console.log('Usuarios en la base de datos:', users);
+
         const user = users.find(user => 
-            user.username.toLowerCase() === username.toLowerCase() && 
-            user.password === password
+            user.username.toLowerCase() === username.toLowerCase().trim() && 
+            user.password === password.trim()
         );
 
         if (!user) {
-            return res.status(401).send('Credenciales incorrectas. Inténtalo nuevamente.');
+            console.log('Usuario no encontrado o credenciales incorrectas.');
+            return res.status(401).json({ error: 'Credenciales incorrectas. Inténtalo nuevamente.' });
         }
 
-        // Si las credenciales son correctas, enviar una respuesta exitosa
-        res.status(200).send(`Bienvenido, ${user.username}!`);
+        if (user.rol === 'admin') {
+            return res.status(200).json({ 
+                message: `Bienvenido, ${user.username}!`, 
+                redirect: '/view/admin.html'
+            });
+        }
+
+        return res.status(200).json({ 
+            message: `Bienvenido, ${user.username}!`, 
+            redirect: '/view/bienvenida.html'
+        });
     } catch (error) {
         console.error('Error interno del servidor:', error);
-        res.status(500).send('Ocurrió un problema en el servidor.');
+        res.status(500).json({ error: 'Ocurrió un problema en el servidor.' });
     }
 });
 

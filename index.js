@@ -8,6 +8,7 @@ import cors from 'cors';
 // Importar rutas
 import compraRouter from './routes/compra.js';
 import registerRoute from './routes/register.js';
+import instrumentosRoute from './routes/instrumentos.js';
 import verifyRoute from './routes/verify.js';
 import loginRoute from './routes/login.js'; // Nueva ruta de login
 
@@ -53,6 +54,7 @@ app.get('/login', (req, res) => {
 
 // Rutas de la API
 app.use('/register', registerRoute); // Ruta para registro
+app.use('/instrumentos', instrumentosRoute); // Ruta para instrumentos
 app.use('/verify', verifyRoute);     // Ruta para verificación
 app.use('/login', loginRoute);       // Ruta para inicio de sesión
 app.use('/compra', compraRouter);    // Ruta para compras (si aplica)

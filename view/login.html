@@ -62,33 +62,36 @@
 
   <script>
     async function login() {
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-      try {
-          const response = await fetch('http://localhost:3000/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ username, password }) // Enviar datos como JSON
-          });
+    try {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }) // Enviar datos como JSON
+        });
 
-          const result = await response.text(); // Leer respuesta del servidor
-          console.log('Estado HTTP:', response.status); // Ver el código de estado
-          console.log('Respuesta del servidor:', result); // Mostrar el mensaje completo
+        if (!response.ok) {
+            // Si la respuesta no es exitosa, leer el mensaje de error
+            const errorData = await response.json();
+            alert(`Error: ${errorData.error}`);
+            return;
+        }
 
-          if (response.ok) {
-              // Inicio de sesión exitoso
-              alert(result);
-              window.location.href = 'bienvenida.html'; // Redirigir al usuario
-          } else {
-              // Mostrar el mensaje de error enviado por el servidor
-              alert(`Error: ${result}`);
-          }
-      } catch (error) {
-          console.error('Error en el fetch:', error); // Mostrar detalles del error
-          alert('Ocurrió un problema al comunicarse con el servidor.');
-      }
+        const result = await response.json(); // Leer la respuesta como JSON
+        console.log('Estado HTTP:', response.status); // Ver el código de estado
+        console.log('Respuesta del servidor:', result); // Mostrar el mensaje completo
+
+        // Inicio de sesión exitoso
+        alert(result.message);
+        window.location.href = result.redirect; // Redirigir al usuario según el rol
+    } catch (error) {
+        console.error('Error en el fetch:', error); // Mostrar detalles del error
+        alert('Ocurrió un problema al comunicarse con el servidor.');
     }
+}
+
   </script>
 </body>
 </html>
