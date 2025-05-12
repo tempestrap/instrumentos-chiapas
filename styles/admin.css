@@ -1,53 +1,133 @@
-/* Estilo general */
+/* styles/admin.css */
+
+/* Estilos base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Títulos */
 h1, h2 {
-    color: #444;
+  color: #2c3e50;
+  text-align: center;
+}
+
+h1 {
+  color: #e74c3c;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+h2 {
+  color: #16a085;
+  margin: 25px 0 15px;
+  font-size: 1.8rem;
+}
+
+/* Secciones */
+section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 /* Formularios */
 form {
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 label {
-    display: inline-block;
-    width: 150px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
-input, button {
-    margin: 5px 0;
-    padding: 8px;
-    font-size: 14px;
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
+input:focus {
+  outline: none;
+  border-color: #16a085;
+  box-shadow: 0 0 0 2px rgba(22, 160, 133, 0.2);
+}
+
+/* Botones */
 button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  grid-column: span 2;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+#cancelar-editar {
+  background-color: #95a5a6;
+  margin-top: 10px;
+}
+
+#cancelar-editar:hover {
+  background-color: #7f8c8d;
 }
 
 /* Lista de instrumentos */
-#lista-instrumentos div {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
+#lista-instrumentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-#lista-instrumentos button {
-    margin-right: 10px;
+.instrumento-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.instrumento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  
+  button {
+    grid-column: span 1;
+  }
 }
