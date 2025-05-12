@@ -2,22 +2,29 @@ let allFlautas = [];
 
 document.addEventListener('DOMContentLoaded', function() {
   fetch('/db/instrumentos.json')
-    .then(response => response.json())
-    .then(data => {
-      const flautas = data.instrumentos.flauta;
-      allFlautas = flautas;
-      console.log("Productos cargados:", flautas);
+  .then(response => response.json())
+  .then(data => {
+    const flautas = data.instrumentos.flauta;
 
-      loadFeaturedInstruments(flautas.slice(0, 2));
-      loadCollageInstruments(flautas.slice(2, 5));
-      loadAllInstruments(flautas.slice(5));
+    if (!Array.isArray(flautas)) {
+      console.error('La categoría "flauta" no existe o no es un array.');
+      alert('No se encontraron productos en la categoría "flauta".');
+      return;
+    }
 
-      setupEventListeners();
-    })
-    .catch(error => {
-      console.error('Error al cargar instrumentos:', error);
-      alert('No se pudieron cargar los productos. Por favor intenta más tarde.');
-    });
+    allFlautas = flautas;
+    console.log("Productos cargados:", flautas);
+
+    loadFeaturedInstruments(flautas.slice(0, 2));
+    loadCollageInstruments(flautas.slice(2, 5));
+    loadAllInstruments(flautas.slice(5));
+
+    setupEventListeners();
+  })
+  .catch(error => {
+    console.error('Error al cargar instrumentos:', error);
+    alert('No se pudieron cargar los productos. Por favor intenta más tarde.');
+  });
 });
 
 function addToCart(productId) {
@@ -68,41 +75,48 @@ function setupEventListeners() {
  * @param {Array} featuredFlautas - Array de flautas destacadas
  */
 function loadFeaturedInstruments(featuredFlautas) {
-  const featuredContainer = document.getElementById('destacados-guitarras'); // Considera cambiar este ID
-  
-  featuredFlautas.forEach((flauta, index) => {
-    const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
-    const imageName = `flauta${index + 2}.png`; // Asume nombres como Flauta1.png, Flauta2.png
-    
-    const featureDiv = document.createElement('div');
-    featureDiv.className = `instrument-feature ${alignmentClass}`;
-    
-    featureDiv.innerHTML = `
-      <div class="instrument-content">
-        <h2>${flauta.nombre}</h2>
-        <p class="featured-description">${flauta.descripcion}</p>
-        <div class="featured-characteristics">
-          ${flauta.caracteristicas.slice(0, 3).map(caract => 
-            `<span class="characteristic-bubble">${caract}</span>`
-          ).join('')}
-        </div>
-        <div class="featured-buttons">
-          <button class="buy-now-btn" data-id="${flauta.id}" data-price="${flauta.precio.replace(/[^0-9.]/g, '')}">
-            Comprar ahora - ${flauta.precio}
-          </button>
-          <button class="add-to-cart-btn secondary-button" data-id="${flauta.id}">
-            Agregar al carrito
-          </button>
-        </div>
-      </div>
-      <div class="instrument-image">
-        <img src="../img/${imageName}" alt="${flauta.nombre}">
-      </div>
-    `;
-    
-    featuredContainer.appendChild(featureDiv);
-  });
+    if (!featuredFlautas || featuredFlautas.length === 0) {
+        console.error('No hay flautas destacadas para mostrar.');
+        const featuredContainer = document.getElementById('destacados-guitarras');
+        featuredContainer.innerHTML = '<p>No hay flautas destacadas disponibles.</p>';
+        return;
+    }
+
+    const featuredContainer = document.getElementById('destacados-guitarras');
+    featuredFlautas.forEach((flauta, index) => {
+        const alignmentClass = index % 2 === 0 ? 'right-aligned' : 'left-aligned';
+        const imageName = `flauta${index + 2}.png`;
+
+        const featureDiv = document.createElement('div');
+        featureDiv.className = `instrument-feature ${alignmentClass}`;
+
+        featureDiv.innerHTML = `
+            <div class="instrument-content">
+                <h2>${flauta.nombre}</h2>
+                <p class="featured-description">${flauta.descripcion}</p>
+                <div class="featured-characteristics">
+                    ${flauta.caracteristicas?.slice(0, 3).map(caract => 
+                        `<span class="characteristic-bubble">${caract}</span>`
+                    ).join('') || ''}
+                </div>
+                <div class="featured-buttons">
+                    <button class="buy-now-btn" data-id="${flauta.id}" data-price="${flauta.precio}">
+                        Comprar ahora - ${flauta.precio}
+                    </button>
+                    <button class="add-to-cart-btn secondary-button" data-id="${flauta.id}">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <div class="instrument-image">
+                <img src="../img/${imageName}" alt="${flauta.nombre}">
+            </div>
+        `;
+
+        featuredContainer.appendChild(featureDiv);
+    });
 }
+
 
 /**
  * Carga los instrumentos del collage (segunda sección)

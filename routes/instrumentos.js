@@ -11,25 +11,69 @@ const router = express.Router();
 const filePath = path.join(__dirname, '../db/instrumentos.json');
 
 // Leer instrumentos
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const data = await fs.readFile(filePath, 'utf-8');
-        res.json(JSON.parse(data));
+        const { categoria, instrumento } = req.body;
+        const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+
+        // Validar que la categoría exista
+        if (!data.instrumentos[categoria]) {
+            data.instrumentos[categoria] = []; // Crear la categoría si no existe
+        }
+
+        // Validar que el instrumento tenga todas las propiedades necesarias
+        if (!instrumento.nombre || !instrumento.descripcion || !instrumento.precio || !instrumento.cantidad) {
+            return res.status(400).send('Faltan propiedades obligatorias del instrumento.');
+        }
+
+        // Agregar propiedades opcionales si no están definidas
+        instrumento.caracteristicas = instrumento.caracteristicas || [];
+        instrumento.marca = instrumento.marca || 'Sin marca';
+
+        // Agregar el instrumento a la categoría
+        data.instrumentos[categoria].push(instrumento);
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+        res.status(201).send('Instrumento agregado.');
     } catch (error) {
-        res.status(500).send('Error al leer los instrumentos.');
+        console.error('Error al agregar el instrumento:', error);
+        res.status(500).send('Error al agregar el instrumento.');
     }
 });
 
 // Eliminar instrumento
-router.delete('/:categoria/:id', async (req, res) => {
+router.put('/:categoria/:id', async (req, res) => {
     try {
         const { categoria, id } = req.params;
+        const { instrumento } = req.body;
         const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
-        data.instrumentos[categoria] = data.instrumentos[categoria].filter(i => i.id !== parseInt(id, 10));
+
+        // Validar que la categoría exista
+        if (!data.instrumentos[categoria]) {
+            return res.status(400).send(`La categoría "${categoria}" no existe.`);
+        }
+
+        // Buscar el índice del instrumento
+        const index = data.instrumentos[categoria].findIndex(i => i.id === parseInt(id, 10));
+        if (index === -1) {
+            return res.status(404).send('Instrumento no encontrado.');
+        }
+
+        // Validar que el instrumento tenga todas las propiedades necesarias
+        if (!instrumento.nombre || !instrumento.descripcion || !instrumento.precio || !instrumento.cantidad) {
+            return res.status(400).send('Faltan propiedades obligatorias del instrumento.');
+        }
+
+        // Agregar propiedades opcionales si no están definidas
+        instrumento.caracteristicas = instrumento.caracteristicas || [];
+        instrumento.marca = instrumento.marca || 'Sin marca';
+
+        // Actualizar el instrumento
+        data.instrumentos[categoria][index] = instrumento;
         await fs.writeFile(filePath, JSON.stringify(data, null, 2));
-        res.status(200).send('Instrumento eliminado.');
+        res.status(200).send('Instrumento actualizado.');
     } catch (error) {
-        res.status(500).send('Error al eliminar el instrumento.');
+        console.error('Error al actualizar el instrumento:', error);
+        res.status(500).send('Error al actualizar el instrumento.');
     }
 });
 
@@ -39,14 +83,33 @@ router.put('/:categoria/:id', async (req, res) => {
         const { categoria, id } = req.params;
         const { instrumento } = req.body;
         const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+
+        // Validar que la categoría exista
+        if (!data.instrumentos[categoria]) {
+            return res.status(400).send(`La categoría "${categoria}" no existe.`);
+        }
+
+        // Buscar el índice del instrumento
         const index = data.instrumentos[categoria].findIndex(i => i.id === parseInt(id, 10));
         if (index === -1) {
             return res.status(404).send('Instrumento no encontrado.');
         }
+
+        // Validar que el instrumento tenga todas las propiedades necesarias
+        if (!instrumento.nombre || !instrumento.descripcion || !instrumento.precio || !instrumento.cantidad) {
+            return res.status(400).send('Faltan propiedades obligatorias del instrumento.');
+        }
+
+        // Agregar propiedades opcionales si no están definidas
+        instrumento.caracteristicas = instrumento.caracteristicas || [];
+        instrumento.marca = instrumento.marca || 'Sin marca';
+
+        // Actualizar el instrumento
         data.instrumentos[categoria][index] = instrumento;
         await fs.writeFile(filePath, JSON.stringify(data, null, 2));
         res.status(200).send('Instrumento actualizado.');
     } catch (error) {
+        console.error('Error al actualizar el instrumento:', error);
         res.status(500).send('Error al actualizar el instrumento.');
     }
 });

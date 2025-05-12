@@ -305,15 +305,7 @@
         "id": 11,
         "nombre": "Flauta de Carrizo",
         "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
-        "caracteristicas": [
-          "Fabricada con carrizo natural",
-          "Sonido suave y melódico",
-          "Ideal para música folclórica",
-          "Fácil de transportar y tocar",
-          "Hecha a mano por artesanos"
-        ],
-        "marca": "Sonido Chiapaneco",
-        "precio": "$1,200.00 MXN",
+        "precio": 1000,
         "cantidad": 4
       },
       {
