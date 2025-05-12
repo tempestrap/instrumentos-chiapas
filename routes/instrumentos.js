@@ -11,6 +11,17 @@ const router = express.Router();
 const filePath = path.join(__dirname, '../db/instrumentos.json');
 
 // Leer instrumentos
+router.get('/', async (req, res) => {
+    try {
+        const data = await fs.readFile(filePath, 'utf-8');
+        res.json(JSON.parse(data));
+    } catch (error) {
+        console.error('Error al leer los instrumentos:', error);
+        res.status(500).send('Error al leer los instrumentos.');
+    }
+});
+
+// Agregar instrumentos
 router.post('/', async (req, res) => {
     try {
         const { categoria, instrumento } = req.body;

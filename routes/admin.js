@@ -7,8 +7,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Cargar instrumentos
     async function cargarInstrumentos() {
+    try {
         const response = await fetch('/instrumentos');
+        if (!response.ok) {
+            throw new Error('Error al cargar los instrumentos.');
+        }
+
         const data = await response.json();
+        console.log('Instrumentos cargados:', data);
 
         listaInstrumentos.innerHTML = ''; // Limpiar la lista
         for (const categoria in data.instrumentos) {
@@ -45,7 +51,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 mostrarFormularioEditar(categoria, id);
             });
         });
+    } catch (error) {
+        console.error('Error al cargar instrumentos:', error);
+        alert('No se pudieron cargar los instrumentos. Por favor intenta más tarde.');
     }
+}
 
     // Agregar instrumento
     formAgregar.addEventListener('submit', async (e) => {

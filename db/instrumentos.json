@@ -305,8 +305,10 @@
         "id": 11,
         "nombre": "Flauta de Carrizo",
         "descripcion": "Flauta tradicional hecha de carrizo, utilizada en las festividades y celebraciones. Su sonido ligero y natural acompaña los bailes tradicionales.",
-        "precio": 1000,
-        "cantidad": 4
+        "precio": 6969,
+        "cantidad": 4,
+        "caracteristicas": [],
+        "marca": "Sin marca"
       },
       {
         "id": 23,

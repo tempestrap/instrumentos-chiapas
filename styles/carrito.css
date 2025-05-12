@@ -1,27 +1,30 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  color: #f7f7f7;
-  background-color: #ffffff;
-}
-.cart {
-  position: fixed;
-  right: 20px;
-  top: 60px;
-  width: 300px;
-  background: rgb(231, 228, 228);
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-  display: none;
-  z-index: 1000;
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.cart.visible {
-  display: block;
+.carrito-item-info {
+    flex: 1;
+    margin-right: 10px;
 }
 
-.hidden {
-  display: none;
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.carrito-item-eliminar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.carrito-item-eliminar:hover {
+    background-color: #c0392b;
 }
